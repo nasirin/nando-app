@@ -4,7 +4,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Nanda Kos</title>
+<title>Nandao Kos</title>
+
+<link rel="shortcut icon" type="icon" href="/assets/logo.png">
 
 <!-- Bootstrap -->
 <link href="/template/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -21,6 +23,13 @@
 <link href="/template/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet" />
 <!-- bootstrap-daterangepicker -->
 <link href="/template/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+<!-- Datatables -->
+<link href="/template/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+<link href="/template/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+<link href="/template/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+<link href="/template/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+<link href="/template/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom Theme Style -->
 <link href="/template/build/css/custom.min.css" rel="stylesheet">

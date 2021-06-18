@@ -1,11 +1,11 @@
 <!-- jQuery -->
-<script src="../vendors/jquery/dist/jquery.min.js"></script>
+<script src="/template/vendors/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap -->
-<script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/template/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- FastClick -->
-<script src="../vendors/fastclick/lib/fastclick.js"></script>
+<script src="/template/vendors/fastclick/lib/fastclick.js"></script>
 <!-- NProgress -->
-<script src="../vendors/nprogress/nprogress.js"></script>
+<script src="/template/vendors/nprogress/nprogress.js"></script>
 <!-- Chart.js -->
 <script src="/template/vendors/Chart.js/dist/Chart.min.js"></script>
 <!-- gauge.js -->
@@ -35,6 +35,13 @@
 <!-- bootstrap-daterangepicker -->
 <script src="/template/vendors/moment/min/moment.min.js"></script>
 <script src="/template/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+<!-- datatable -->
+<script src="/template/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="/template/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+
+<!-- jQuery Smart Wizard -->
+<script src="/template/vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
 
 <!-- Custom Theme Scripts -->
 <script src="/template/build/js/custom.min.js"></script>
