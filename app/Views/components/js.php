@@ -39,9 +39,11 @@
 <!-- datatable -->
 <script src="/template/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="/template/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="/template/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="/template/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
 
 <!-- jQuery Smart Wizard -->
 <script src="/template/vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
 
 <!-- Custom Theme Scripts -->
-<script src="/template/build/js/custom.min.js"></script>
+<script src="/template/build/js/custom.js"></script>

@@ -51,6 +51,15 @@ $routes->group('pelanggan', function ($routes) {
 	$routes->get('delete/(:num)', 'Pelanggan::destroy/$1');
 });
 
+$routes->group('kamar', function ($routes) {
+	$routes->get('/', 'Kamar');
+	$routes->get('tambah', 'Kamar::create');
+	$routes->post('tambah', 'Kamar::store');
+	$routes->get('edit/(:num)', 'Kamar::edit/$1');
+	$routes->post('edit/(:num)', 'Kamar::update/$1');
+	$routes->get('delete/(:num)', 'Kamar::destroy/$1');
+});
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
