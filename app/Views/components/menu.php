@@ -23,23 +23,23 @@
         <!-- sidebar menu -->
         <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
             <div class="menu_section">
-                <h3>General</h3>
+                <h3>Menu</h3>
                 <ul class="nav side-menu">
                     <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
                     <li><a href="/admin"><i class="fa fa-home"></i> Admin</a></li>
-                    <li><a href="#"><i class="fa fa-home"></i> Pelanggan</a></li>
-                    <li><a href="#"><i class="fa fa-home"></i> Data kamar</a></li>
+                    <li><a href="/pelanggan"><i class="fa fa-home"></i> Pelanggan</a></li>
+                    <li><a href="/kamar"><i class="fa fa-home"></i> Data kamar</a></li>
                     <li><a><i class="fa fa-home"></i> Transaksi <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="#">Booking</a></li>
-                            <li><a href="#">Pembayaran</a></li>
-                            <li><a href="#">Jatuh Tempo</a></li>
+                            <li><a href="/booking">Booking</a></li>
+                            <li><a href="/pembayaran">Pembayaran</a></li>
+                            <li><a href="/jt">Jatuh Tempo</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
             <div class="menu_section">
-                <h3>More</h3>
+                <h3>Utilities</h3>
                 <ul class="nav side-menu">
                     <li><a href="#"><i class="fa fa-home"></i> Fasilitas </a></li>
                     <!-- <li><a href="#"><i class="fa fa-home"></i> Aturan Kamar </a></li> -->

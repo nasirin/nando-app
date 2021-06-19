@@ -5,7 +5,7 @@
     <div class="">
         <div class="page-title">
             <div class="title_left">
-                <h3>Data Admin</h3>
+                <h3>Data Pelanggan</h3>
             </div>
 
             <!-- <div class="title_right">
@@ -26,7 +26,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <a href="admin/tambah" class="btn btn-sm btn-primary"><i class="fa fa-plus-circle"></i> Tambah</a>
+                        <a href="pelanggan/tambah" class="btn btn-sm btn-primary"><i class="fa fa-plus-circle"></i> Tambah</a>
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
@@ -35,26 +35,34 @@
                                 <tr>
                                     <th>Photo</th>
                                     <th>Nama</th>
-                                    <th>Email</th>
-                                    <th>Level</th>
+                                    <th>JK</th>
+                                    <th>Tgl lahir</th>
+                                    <th>Telepon</th>
+                                    <th>Pekerjaan</th>
                                     <th>More</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($admin as $data) : ?>
+                                <?php foreach ($pelanggan as $data) : ?>
                                     <tr>
                                         <td>
-                                            <img src="/assets/img/admin/<?= $data['img_adm'] ?>" class="img-circle" width="60">
+                                            <?php if ($data['img_ktp']) : ?>
+                                                <img src="/assets/img/pelanggan/<?= $data['img_ktp'] ?>" class="img-circle" width="50">
+                                            <?php else : ?>
+                                                <img src="/assets/img/default-img.jpg" class="img-circle" width="50">
+                                            <?php endif; ?>
                                         </td>
-                                        <td><?= $data['nama_adm'] ?></td>
-                                        <td><?= $data['email'] ?></td>
-                                        <td><?= $data['level'] ?></td>
+                                        <td><?= $data['nama_pel'] ?></td>
+                                        <td><?= $data['jk'] ?></td>
+                                        <td><?= $data['tgl_lahir'] ?></td>
+                                        <td><?= $data['notelp'] ?></td>
+                                        <td><?= $data['pekerjaan'] ?></td>
                                         <td>
-                                            <form action="/admin/delete/<?= $data['id'] ?>" method="GET">
-                                                <?= csrf_field() ?>
-                                                <a href="/admin/edit/<?= $data['id'] ?>" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>
-                                                <button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-trash"></i></button>
+                                            <form action="/pelanggan/delete/<?= $data['id'] ?>" method="GET">
+                                                <a href="/pelanggan/edit/<?= $data['id'] ?>" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>
+                                                <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
                                             </form>
+                                            <!-- <a href="/pelanggan/delete/<?= $data['id'] ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a> -->
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

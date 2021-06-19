@@ -42,6 +42,15 @@ $routes->group('admin', function ($routes) {
 	$routes->get('delete/(:num)', 'Admin::destroy/$1');
 });
 
+$routes->group('pelanggan', function ($routes) {
+	$routes->get('/', 'Pelanggan');
+	$routes->get('tambah', 'Pelanggan::create');
+	$routes->post('tambah', 'Pelanggan::store');
+	$routes->get('edit/(:num)', 'Pelanggan::edit/$1');
+	$routes->post('edit/(:num)', 'Pelanggan::update/$1');
+	$routes->get('delete/(:num)', 'Pelanggan::destroy/$1');
+});
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
