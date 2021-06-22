@@ -4,17 +4,17 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Kamar extends Model
+class Booking extends Model
 {
 	protected $DBGroup              = 'default';
-	protected $table                = 'kamars';
+	protected $table                = 'bookings';
 	protected $primaryKey           = 'id';
 	protected $useAutoIncrement     = true;
 	protected $insertID             = 0;
 	protected $returnType           = 'array';
 	protected $useSoftDeletes       = false;
 	protected $protectFields        = true;
-	protected $allowedFields        = ['nama_kamar', 'luas', 'status'];
+	protected $allowedFields        = ['id_kamar', 'id_pel', 'harga_per', 'check_in', 'check_out', 'total'];
 
 	// Dates
 	protected $useTimestamps        = false;
@@ -40,37 +40,36 @@ class Kamar extends Model
 	protected $beforeDelete         = [];
 	protected $afterDelete          = [];
 
+	public function get($id = null)
+	{
+		if ($id) {
+			return $this->db->table($this->table)
+				->join('kamars', 'kamars.id = bookings.id_kamar', 'left')
+				->join('pelanggans', 'pelanggans.id = bookings.id_pel', 'left')
+				->where('bookings.id', $id)
+				->get()->getRowArray();
+		} else {
+			return $this->db->table($this->table)
+				->join('kamars', 'kamars.id = bookings.id_kamar', 'left')
+				->join('pelanggans', 'pelanggans.id = bookings.id_pel', 'left')
+				->orderBy('bookings.id', 'desc')
+				->get()->getResultArray();
+		}
+	}
+
 	public function simpan($post)
 	{
 		$data = [
-			'nama_kamar' => $post['nama'],
-			'luas' => $post['luas'],
-			'status' => 'available',
+			'id_kamar' => $post['kamar'],
+			'id_pel' => $post['pelanggan'],
+			'harga_per' => $post['optionsRadios'],
+			'check_in' => $post['checkin'],
 		];
 
 		$this->insert($data);
 	}
 
-	public function ubah($post, $id)
-	{
-		$data = [
-			'nama_kamar' => $post['nama'],
-			'luas' => $post['luas'],
-			'status' => 'available',
-		];
-
-		$this->update($id, $data);
-	}
-
-	public function updateStatus($post)
-	{
-		$data = [
-			'status' => 'booked'
-		];
-		$this->update($post, $data);
-	}
-
-	public function getLastById()
+	public function getLast()
 	{
 		return $this->db->table($this->table)->orderBy($this->primaryKey, 'desc')->get()->getRowArray();
 	}

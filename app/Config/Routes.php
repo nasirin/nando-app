@@ -53,11 +53,21 @@ $routes->group('pelanggan', function ($routes) {
 
 $routes->group('kamar', function ($routes) {
 	$routes->get('/', 'Kamar');
+	$routes->get('detail/(:num)', 'Kamar::show/$1');
 	$routes->get('tambah', 'Kamar::create');
 	$routes->post('tambah', 'Kamar::store');
 	$routes->get('edit/(:num)', 'Kamar::edit/$1');
 	$routes->post('edit/(:num)', 'Kamar::update/$1');
 	$routes->get('delete/(:num)', 'Kamar::destroy/$1');
+});
+
+$routes->group('booking', function ($routes) {
+	$routes->get('/', 'Booking');
+	$routes->get('tambah', 'Booking::create');
+	$routes->post('tambah', 'Booking::store');
+	$routes->get('edit/(:num)', 'Booking::edit/$1');
+	$routes->post('edit/(:num)', 'Booking::update/$1');
+	$routes->get('delete/(:num)', 'Booking::destroy/$1');
 });
 
 /*

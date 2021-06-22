@@ -47,3 +47,24 @@
 
 <!-- Custom Theme Scripts -->
 <script src="/template/build/js/custom.js"></script>
+
+<script type='text/javascript'>
+    var max_fields = 100;
+    var wrapper = $(".input_fields_wrap");
+    var add_button = $(".add_field_button");
+
+    var x = 1;
+    $(add_button).click(function(e) {
+        e.preventDefault();
+        if (x < max_fields) {
+            x++;
+            $(wrapper).append('<section class="row"><div class="col-md-5 col-5"><input type="text" class="form-control form-control-sm" name="tambahan[]" required/></div><div class="col-md-5 col-5"><input type="text" class="form-control form-control-sm" name="biaya[]"/></div><div class="col-md-2 col-2"><a href="#" class="remove_field text-danger"><i class="fa fa-trash"></i></a></div> </section>'); //add input box
+        }
+    });
+
+    $(wrapper).on("click", ".remove_field", function(e) { //user click on remove text
+        e.preventDefault();
+        $(this).parents('section').remove();
+        x--;
+    })
+</script>

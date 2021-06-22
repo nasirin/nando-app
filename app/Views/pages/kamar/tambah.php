@@ -15,7 +15,7 @@
                 <form action="/kamar/tambah" method="POST" data-parsley-validate class="form-horizontal form-label-left">
                     <?= csrf_field() ?>
                     <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nama <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Kamar <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <input type="text" name="nama" required="required" class="form-control col-md-7 col-xs-12">
@@ -32,34 +32,23 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Harga <small>Bulanan</small> <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input type="number" min="0" name="h.bulan" required="required" class="form-control col-md-7 col-xs-12">
+                            <input type="hidden" value="Bulanan" name="waktu_sewa[]">
+                            <input type="number" min="0" name="biaya[]" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Harga <small>Mingguan</small></label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Harga <small>Mingguan</small> <span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input type="number" min="0" name="h.minggu" class="form-control col-md-7 col-xs-12">
+                            <input type="hidden" value="Mingguan" name="waktu_sewa[]">
+                            <input type="number" min="0" name="biaya[]" class="form-control col-md-7 col-xs-12" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Harga <small>Per 3 Bulan</small>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Harga <small>Tahunan</small> <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input type="number" min="0" name="h.3bulan" class="form-control col-md-7 col-xs-12">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Harga <small>Per 6 Bulan</small>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input type="number" min="0" name="h.6bulan" class="form-control col-md-7 col-xs-12">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Harga <small>Tahunan</small>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input type="number" min="0" name="h.tahunan" class="form-control col-md-7 col-xs-12">
+                            <input type="hidden" value="Tahunan" name="waktu_sewa[]">
+                            <input type="number" min="0" name="biaya[]" class="form-control col-md-7 col-xs-12" required>
                         </div>
                     </div>
                     <div class="form-group">

@@ -4,17 +4,17 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Kamar extends Model
+class Tambahan extends Model
 {
 	protected $DBGroup              = 'default';
-	protected $table                = 'kamars';
+	protected $table                = 'tambahans';
 	protected $primaryKey           = 'id';
 	protected $useAutoIncrement     = true;
 	protected $insertID             = 0;
 	protected $returnType           = 'array';
 	protected $useSoftDeletes       = false;
 	protected $protectFields        = true;
-	protected $allowedFields        = ['nama_kamar', 'luas', 'status'];
+	protected $allowedFields        = ['id_booking', 'tambahan', 'biaya'];
 
 	// Dates
 	protected $useTimestamps        = false;
@@ -40,38 +40,16 @@ class Kamar extends Model
 	protected $beforeDelete         = [];
 	protected $afterDelete          = [];
 
-	public function simpan($post)
+	public function simpan($post, $booking)
 	{
-		$data = [
-			'nama_kamar' => $post['nama'],
-			'luas' => $post['luas'],
-			'status' => 'available',
-		];
-
-		$this->insert($data);
-	}
-
-	public function ubah($post, $id)
-	{
-		$data = [
-			'nama_kamar' => $post['nama'],
-			'luas' => $post['luas'],
-			'status' => 'available',
-		];
-
-		$this->update($id, $data);
-	}
-
-	public function updateStatus($post)
-	{
-		$data = [
-			'status' => 'booked'
-		];
-		$this->update($post, $data);
-	}
-
-	public function getLastById()
-	{
-		return $this->db->table($this->table)->orderBy($this->primaryKey, 'desc')->get()->getRowArray();
+		$result = array();
+		foreach ($post['tambahan'] as $key => $value) {
+			$result[] = array(
+				'id_booking' => $booking,
+				'tambahan' => $post['tambahan'][$key],
+				'biaya' => $post['biaya'][$key]
+			);
+		}
+		$this->db->table($this->table)->insertBatch($result);
 	}
 }

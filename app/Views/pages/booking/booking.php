@@ -5,7 +5,7 @@
     <div class="">
         <div class="page-title">
             <div class="title_left">
-                <h3>Data Kamar</h3>
+                <h3>Data Booking</h3>
             </div>
 
             <!-- <div class="title_right">
@@ -26,32 +26,29 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <a href="/kamar/tambah" class="btn btn-sm btn-primary"><i class="fa fa-plus-curcle"></i> Tambah</a>
+                        <a href="/booking/tambah" class="btn btn-sm btn-primary"><i class="fa fa-plus-curcle"></i> Tambah</a>
                     </div>
                     <div class="x_content">
                         <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
                                     <th>Kamar</th>
-                                    <th>Luas</th>
-                                    <th>Status</th>
+                                    <th>Pelanggan</th>
+                                    <th>Waktu sewa</th>
+                                    <th>Total</th>
+                                    <th>Check in </th>
+                                    <th>Waktu Tenggang </th>
+                                    <th>Check Out </th>
+                                    <th>Total</th>
                                     <th>More</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($kamar as $data) : ?>
+                                <?php foreach ($booking as $data) : ?>
                                     <tr>
                                         <td><?= $data['nama_kamar'] ?></td>
-                                        <td><?= $data['luas'] ?></td>
-                                        <td><?= $data['status'] ?></td>
-                                        <td>
-                                            <form action="/kamar/delete/<?= $data['id'] ?>" method="GET">
-                                                <?= csrf_field() ?>
-                                                <a href="/kamar/show/<?= $data['id'] ?>" class="btn btn-sm btn-info" target="_blank"><i class="fa fa-dollar"></i></a>
-                                                <a href="/kamar/edit/<?= $data['id'] ?>" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>
-                                                <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
-                                            </form>
-                                        </td>
+                                        <td><?= $data['nama_pel'] ?></td>
+                                        <td><?= $data['harga_per'] == 'h_bulanan' ? 'Bulanan' : ($data['harga_per'] == 'h_mingguan' ? 'Mingguan' : ($data['harga_per'] == 'h_tahunan' ? 'Tahunan' : '')) ?></td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>
