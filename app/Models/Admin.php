@@ -73,4 +73,12 @@ class Admin extends Model
 
 		$this->db->table($this->table)->where($this->primaryKey, $id)->update($data);
 	}
+
+	public function login($post)
+	{
+		return $this->db->table($this->table)
+			->where('email', $post['email'])
+			->where('password', hash('md5', $post['password']))
+			->get()->getRowArray();
+	}
 }

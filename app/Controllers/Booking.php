@@ -6,8 +6,8 @@ use App\Controllers\BaseController;
 use App\Models\Booking as ModelsBooking;
 use App\Models\DetailKamar;
 use App\Models\Kamar;
+use App\Models\Payment;
 use App\Models\Pelanggan;
-use App\Models\Tambahan;
 
 class Booking extends BaseController
 {
@@ -15,19 +15,22 @@ class Booking extends BaseController
 	protected $kamar;
 	protected $detailKamar;
 	protected $pelanggan;
+	protected $payment;
 
 	public function __construct()
 	{
 		$this->booking = new ModelsBooking();
-		// $this->tambahan = new Tambahan();
 		$this->pelanggan = new Pelanggan();
 		$this->kamar = new Kamar();
 		$this->detailKamar = new DetailKamar();
+		$this->payment = new Payment();
 	}
 
 	public function index()
 	{
-		$data['booking'] = $this->booking->get();
+		$data = [
+			'booking' => $this->booking->get(),
+		];
 		return view('pages/booking/booking', $data);
 	}
 
@@ -44,8 +47,12 @@ class Booking extends BaseController
 	{
 		$post = $this->request->getVar();
 		$kamar = $this->detailKamar->getBiaya($post);
+
 		$this->booking->simpan($post, $kamar);
 		$this->kamar->updateStatus($post['kamar']);
+		$booking = $this->booking->getLast();
+		$this->payment->simpan($post, $booking);
+
 		session()->setFlashdata('success', 'Data has been created');
 		return redirect()->to('/booking');
 	}
@@ -54,7 +61,7 @@ class Booking extends BaseController
 	{
 		$data = [
 			'booking' => $this->booking->get($id),
-			'tambahan' => $this->tambahan->getAllData($id),
+			// 'tambahan' => $this->tambahan->getAllData($id),
 			'kamar' => $this->kamar->where('status', 'available')->findAll(),
 			'pelanggan' => $this->pelanggan->findAll(),
 
@@ -75,6 +82,7 @@ class Booking extends BaseController
 		}
 
 		$this->booking->ubah($post, $kamar, $id);
+		$this->payment->ubah($post, $booking);
 
 		session()->setFlashdata('success', 'Data has been updated');
 		return redirect()->to('/booking');
@@ -86,6 +94,16 @@ class Booking extends BaseController
 		$this->kamar->updateStatusAvalable($getKamar['id_kamar']);
 		$this->booking->delete($id);
 		session()->setFlashdata('success', 'Data has been deleted');
+		return redirect()->to('/booking');
+	}
+
+	public function checkout($id)
+	{
+		$booking = $this->booking->get($id);
+		$this->booking->checkout($id);
+		$this->kamar->updateStatusAvalable($booking['id_kamar']);
+		$this->payment->updateStatusChekout($booking['id_booking']);
+		session()->setFlashdata('success', 'Data has been updated');
 		return redirect()->to('/booking');
 	}
 }

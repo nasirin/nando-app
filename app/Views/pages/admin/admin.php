@@ -50,9 +50,9 @@
                                         <td><?= $data['email'] ?></td>
                                         <td><?= $data['level'] ?></td>
                                         <td>
-                                            <form action="/admin/delete/<?= $data['id'] ?>" method="GET">
+                                            <form action="/admin/delete/<?= $data['id_adm'] ?>" method="GET">
                                                 <?= csrf_field() ?>
-                                                <a href="/admin/edit/<?= $data['id'] ?>" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>
+                                                <a href="/admin/edit/<?= $data['id_adm'] ?>" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>
                                                 <button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-trash"></i></button>
                                             </form>
                                         </td>

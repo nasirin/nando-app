@@ -96,4 +96,13 @@ class Booking extends Model
 	{
 		return $this->db->table($this->table)->orderBy($this->primaryKey, 'desc')->get()->getRowArray();
 	}
+
+	public function checkout($id)
+	{
+		$data = [
+			'check_out' => date('ymd')
+		];
+
+		$this->update($id, $data);
+	}
 }

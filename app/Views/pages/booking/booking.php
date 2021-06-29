@@ -52,7 +52,9 @@
                                             <form action="/booking/delete/<?= $data['id_booking'] ?>" method="post">
                                                 <?= csrf_field() ?>
                                                 <a href="/invoice/<?= $data['id_booking'] ?>" class="btn btn-sm btn-info"><i class="fa fa-eye"></i></a>
-                                                <a href="/booking/edit/<?= $data['id_booking'] ?>" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>
+                                                <?php if ($data['check_out'] == null) : ?>
+                                                    <a href="/booking/edit/<?= $data['id_booking'] ?>" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>
+                                                <?php endif; ?>
                                                 <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
                                             </form>
                                         </td>

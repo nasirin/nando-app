@@ -31,9 +31,15 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->get('/', 'Home::index', ['filter' => 'auth']);
 
-$routes->group('admin', function ($routes) {
+$routes->group('auth', ['filter' => 'noauth'], function ($routes) {
+	$routes->get('/', 'Auth');
+	$routes->post('login', 'Auth::login');
+});
+$routes->get('/auth/logout', 'Auth::logout');
+
+$routes->group('admin', ['filter' => 'auth'], function ($routes) {
 	$routes->get('/', 'Admin');
 	$routes->get('tambah', 'Admin::create');
 	$routes->post('tambah', 'Admin::store');
@@ -42,7 +48,7 @@ $routes->group('admin', function ($routes) {
 	$routes->get('delete/(:num)', 'Admin::destroy/$1');
 });
 
-$routes->group('pelanggan', function ($routes) {
+$routes->group('pelanggan', ['filter' => 'auth'], function ($routes) {
 	$routes->get('/', 'Pelanggan');
 	$routes->get('tambah', 'Pelanggan::create');
 	$routes->post('tambah', 'Pelanggan::store');
@@ -51,7 +57,7 @@ $routes->group('pelanggan', function ($routes) {
 	$routes->get('delete/(:num)', 'Pelanggan::destroy/$1');
 });
 
-$routes->group('kamar', function ($routes) {
+$routes->group('kamar', ['filter' => 'auth'], function ($routes) {
 	$routes->get('/', 'Kamar');
 	$routes->get('detail/(:num)', 'Kamar::show/$1');
 	$routes->get('tambah', 'Kamar::create');
@@ -61,16 +67,22 @@ $routes->group('kamar', function ($routes) {
 	$routes->get('delete/(:num)', 'Kamar::destroy/$1');
 });
 
-$routes->group('booking', function ($routes) {
+$routes->group('booking', ['filter' => 'auth'], function ($routes) {
 	$routes->get('/', 'Booking');
 	$routes->get('tambah', 'Booking::create');
 	$routes->post('tambah', 'Booking::store');
 	$routes->get('edit/(:num)', 'Booking::edit/$1');
 	$routes->post('edit/(:num)', 'Booking::update/$1');
 	$routes->post('delete/(:num)', 'Booking::destroy/$1');
+	$routes->get('checkout/(:num)', 'Booking::checkout/$1');
 });
 
-$routes->get('invoice/(:num)', 'Invoice::index/$1');
+$routes->group('invoice', ['filter' => 'auth'], function ($routes) {
+	$routes->get('(:num)', 'Invoice::index/$1');
+	$routes->post('(:num)', 'Invoice::payment/$1');
+});
+
+
 
 /*
  * --------------------------------------------------------------------

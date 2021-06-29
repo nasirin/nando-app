@@ -9,11 +9,11 @@
         <!-- menu profile quick info -->
         <div class="profile clearfix">
             <div class="profile_pic">
-                <img src="/template/production/images/img.jpg" alt="..." class="img-circle profile_img">
+                <img src="/assets/img/admin/<?= session('img') ?>" alt="..." class="img-circle profile_img">
             </div>
             <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>John Doe</h2>
+                <h2><?= ucwords(session('nama')) ?></h2>
             </div>
         </div>
         <!-- /menu profile quick info -->
@@ -26,7 +26,9 @@
                 <h3>Menu</h3>
                 <ul class="nav side-menu">
                     <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
-                    <li><a href="/admin"><i class="fa fa-home"></i> Admin</a></li>
+                    <?php if (session('level') == 'manager') : ?>
+                        <li><a href="/admin"><i class="fa fa-home"></i> Admin</a></li>
+                    <?php endif; ?>
                     <li><a href="/pelanggan"><i class="fa fa-home"></i> Pelanggan</a></li>
                     <li><a href="/kamar"><i class="fa fa-home"></i> Data kamar</a></li>
                     <li><a href="/booking"><i class="fa fa-home"></i> Booking</a></li>
@@ -36,7 +38,7 @@
         <!-- /sidebar menu -->
 
         <!-- /menu footer buttons -->
-        <div class="sidebar-footer hidden-small">
+        <!-- <div class="sidebar-footer hidden-small">
             <a data-toggle="tooltip" data-placement="top" title="Settings">
                 <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
             </a>
@@ -49,7 +51,7 @@
             <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
             </a>
-        </div>
+        </div> -->
         <!-- /menu footer buttons -->
     </div>
 </div>

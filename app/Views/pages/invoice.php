@@ -87,6 +87,18 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php if (!empty($payment)) : ?>
+                                                <?php $no = 1;
+                                                foreach ($payment as $data) : ?>
+                                                    <tr>
+                                                        <td><?= $no++ ?></td>
+                                                        <td><?= $data['tgl_bayar'] ?></td>
+                                                        <td><?= $data['nominal'] ?></td>
+                                                        <td><?= $data['due_date'] ?></td>
+                                                        <td><?= $data['status'] ?></td>
+                                                    </tr>
+                                                <?php endforeach; ?>
+                                            <?php endif; ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -109,15 +121,19 @@
                                             <tbody>
                                                 <tr>
                                                     <th style="width:50%">Subtotal:</th>
-                                                    <td>$250.30</td>
+                                                    <td><?= 'Rp ' . number_format($tagihan['nominal'], 0, ',', '.')  ?? '' ?></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Denda</th>
-                                                    <td>$10.34</td>
+                                                    <td><?= 'Rp ' . number_format($denda['denda'], 0, ',', '.') ?? '' ?></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Total:</th>
-                                                    <td>$265.24</td>
+                                                    <?php if ($denda) : ?>
+                                                        <td><?= 'Rp ' . number_format($tagihan['nominal'] + $denda['denda'], 0, ',', '.')  ?></td>
+                                                    <?php else : ?>
+                                                        <td><?= 'Rp ' . number_format($tagihan['nominal'], 0, ',', '.')  ?></td>
+                                                    <?php endif; ?>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -131,8 +147,14 @@
                             <div class="row no-print">
                                 <div class="col-xs-12">
                                     <button class="btn btn-default" onclick="window.print();"><i class="fa fa-print"></i> Print</button>
-                                    <button class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Submit Payment</button>
-                                    <button class="btn btn-info pull-right"><i class="fa fa-eye"></i> History</button>
+                                    <?php if ($statusPayment['status'] != 'checkout') : ?>
+                                        <form action="/invoice/<?= $invoice['id_booking'] ?>" method="post" class="d-inline pull-right">
+                                            <?= csrf_field() ?>
+                                            <button type="submit" onclick="return confirm('Submit Pembayaran?')" class="btn btn-success"><i class="fa fa-credit-card"></i> Submit Payment</button>
+                                        </form>
+                                        <a href="/booking/checkout/<?= $invoice['id_booking'] ?>" onclick="return confirm('Ingin Check Out?')" class="btn btn-danger pull-right"><i class="fas fa-door-open"></i> Check Out</a>
+                                    <?php endif; ?>
+
                                 </div>
                             </div>
                         </section>

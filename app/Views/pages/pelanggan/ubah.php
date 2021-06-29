@@ -41,7 +41,7 @@
             </div> -->
             <div class="x_content">
                 <br />
-                <form action="/pelanggan/edit/<?= $pelanggan['id'] ?>" method="POST" data-parsley-validate class="form-horizontal form-label-left" enctype="multipart/form-data">
+                <form action="/pelanggan/edit/<?= $pelanggan['id_pel'] ?>" method="POST" data-parsley-validate class="form-horizontal form-label-left" enctype="multipart/form-data">
                     <?= csrf_field() ?>
                     <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nama <span class="required">*</span>
@@ -107,7 +107,7 @@
                     <div class="ln_solid"></div>
                     <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                            <button class="btn btn-primary" type="button">Cancel</button>
+                            <a href="/pelanggan" class="btn btn-primary">Cancel</a>
                             <button type="submit" class="btn btn-success">Submit</button>
                         </div>
                     </div>
