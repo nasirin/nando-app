@@ -45,10 +45,10 @@
                                         <td><?= $data['luas'] ?></td>
                                         <td><?= $data['status'] ?></td>
                                         <td>
-                                            <form action="/kamar/delete/<?= $data['id'] ?>" method="GET">
+                                            <form action="/kamar/delete/<?= $data['id_kamar'] ?>" method="GET">
                                                 <?= csrf_field() ?>
-                                                <a href="/kamar/show/<?= $data['id'] ?>" class="btn btn-sm btn-info" target="_blank"><i class="fa fa-dollar"></i></a>
-                                                <a href="/kamar/edit/<?= $data['id'] ?>" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>
+                                                <a href="/kamar/show/<?= $data['id_kamar'] ?>" class="btn btn-sm btn-info" target="_blank"><i class="fa fa-dollar"></i></a>
+                                                <a href="/kamar/edit/<?= $data['id_kamar'] ?>" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>
                                                 <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
                                             </form>
                                         </td>

@@ -35,11 +35,8 @@
                                     <th>Kamar</th>
                                     <th>Pelanggan</th>
                                     <th>Waktu sewa</th>
-                                    <th>Total</th>
                                     <th>Check in </th>
-                                    <th>Waktu Tenggang </th>
-                                    <th>Check Out </th>
-                                    <th>Total</th>
+                                    <th>Biaya</th>
                                     <th>More</th>
                                 </tr>
                             </thead>
@@ -48,7 +45,17 @@
                                     <tr>
                                         <td><?= $data['nama_kamar'] ?></td>
                                         <td><?= $data['nama_pel'] ?></td>
-                                        <td><?= $data['harga_per'] == 'h_bulanan' ? 'Bulanan' : ($data['harga_per'] == 'h_mingguan' ? 'Mingguan' : ($data['harga_per'] == 'h_tahunan' ? 'Tahunan' : '')) ?></td>
+                                        <td><?= $data['harga_per'] ?></td>
+                                        <td><?= $data['check_in'] ?></td>
+                                        <td><?= 'Rp ' . number_format($data['total'], 0, ',', '.') ?></td>
+                                        <td>
+                                            <form action="/booking/delete/<?= $data['id_booking'] ?>" method="post">
+                                                <?= csrf_field() ?>
+                                                <a href="/invoice/<?= $data['id_booking'] ?>" class="btn btn-sm btn-info"><i class="fa fa-eye"></i></a>
+                                                <a href="/booking/edit/<?= $data['id_booking'] ?>" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>
+                                                <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                                            </form>
+                                        </td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>

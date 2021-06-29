@@ -5,90 +5,70 @@
     <div class="">
         <div class="page-title">
             <div class="title_left">
-                <h3>Ubah Kamar</h3>
+                <h3>Booking Form</h3>
             </div>
 
-            <!-- <div class="title_right">
-                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for...">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">Go!</button>
-                        </span>
-                    </div>
-                </div>
-            </div> -->
         </div>
         <div class="x_panel">
-            <!-- <div class="x_title">
-                <h2>Form Design <small>different form elements</small></h2>
-                <ul class="nav navbar-right panel_toolbox">
-                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Settings 1</a>
-                            </li>
-                            <li><a href="#">Settings 2</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                    </li>
-                </ul>
-                <div class="clearfix"></div>
-            </div> -->
             <div class="x_content">
                 <br />
-                <form action="/kamar/edit/<?= $kamar['id'] ?>" method="POST" data-parsley-validate class="form-horizontal form-label-left">
+                <form action="/booking/edit/<?= $booking['id_booking'] ?>" method="POST" data-parsley-validate class="form-horizontal form-label-left">
                     <?= csrf_field() ?>
                     <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nama <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Kamar <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input type="text" name="nama" required="required" class="form-control col-md-7 col-xs-12" value="<?= $kamar['nama_kamar'] ?>">
+                            <select name="kamar" required class="form-control col-md-7 col-xs-12">
+                                <option value="<?= $booking['id_kamar'] ?>" selected><?= $booking['nama_kamar'] ?> (selected)</option>
+                                <option value="">--- Pilih Kamar ---</option>
+                                <?php foreach ($kamar as $data) : ?>
+                                    <option value="<?= $data['id_kamar'] ?>"><?= $data['nama_kamar'] ?></option>
+                                <?php endforeach; ?>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">luas <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Pelanggan <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input type="text" name="luas" required="required" class="form-control col-md-7 col-xs-12" value="<?= $kamar['luas'] ?>">
+                            <select name="pelanggan" required class="form-control col-md-7 col-xs-12">
+                                <option value="<?= $booking['id_pel'] ?>" selected><?= $booking['nama_pel'] ?> (selected)</option>
+                                <option value="">--- Pilih Pelanggan ---</option>
+                                <?php foreach ($pelanggan as $data) : ?>
+                                    <option value="<?= $data['id_pel'] ?>"><?= $data['nama_pel'] ?></option>
+                                <?php endforeach; ?>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Harga <small>Bulanan</small> <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Type Pembayaran <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input type="number" min="0" name="h.bulan" required="required" class="form-control col-md-7 col-xs-12" value="<?= $kamar['h_bulanan'] ?>">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" <?= $booking['harga_per'] == 'Mingguan' ? 'checked' : '' ?> value="Mingguan" id="optionsRadios1" name="optionsRadios">
+                                    Mingguan
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" value="Bulanan" id="optionsRadios2" name="optionsRadios" <?= $booking['harga_per'] == 'Bulanan' ? 'checked' : '' ?>>
+                                    Bulanan
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" value="Tahunan" id="optionsRadios2" name="optionsRadios" <?= $booking['harga_per'] == 'Tahunan' ? 'checked' : '' ?>>
+                                    Tahunan
+                                </label>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Harga <small>Mingguan</small></label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input type="number" min="0" name="h.minggu" class="form-control col-md-7 col-xs-12" value="<?= $kamar['h_mingguan'] ?>">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Harga <small>Per 3 Bulan</small>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Check in <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input type="number" min="0" name="h.3bulan" class="form-control col-md-7 col-xs-12" value="<?= $kamar['h_3bulan'] ?>">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Harga <small>Per 6 Bulan</small>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input type="number" min="0" name="h.6bulan" class="form-control col-md-7 col-xs-12" value="<?= $kamar['h_6bulan'] ?>">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Harga <small>Tahunan</small>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input type="number" min="0" name="h.tahunan" class="form-control col-md-7 col-xs-12" value="<?= $kamar['h_tahunan'] ?>">
+                            <input type="date" required class="form-control" name="checkin" value="<?= $booking['check_in'] ?>">
                         </div>
                     </div>
                     <div class="form-group">

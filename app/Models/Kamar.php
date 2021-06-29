@@ -8,7 +8,7 @@ class Kamar extends Model
 {
 	protected $DBGroup              = 'default';
 	protected $table                = 'kamars';
-	protected $primaryKey           = 'id';
+	protected $primaryKey           = 'id_kamar';
 	protected $useAutoIncrement     = true;
 	protected $insertID             = 0;
 	protected $returnType           = 'array';
@@ -66,6 +66,14 @@ class Kamar extends Model
 	{
 		$data = [
 			'status' => 'booked'
+		];
+		$this->update($post, $data);
+	}
+
+	public function updateStatusAvalable($post)
+	{
+		$data = [
+			'status' => 'available'
 		];
 		$this->update($post, $data);
 	}

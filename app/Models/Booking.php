@@ -8,7 +8,7 @@ class Booking extends Model
 {
 	protected $DBGroup              = 'default';
 	protected $table                = 'bookings';
-	protected $primaryKey           = 'id';
+	protected $primaryKey           = 'id_booking';
 	protected $useAutoIncrement     = true;
 	protected $insertID             = 0;
 	protected $returnType           = 'array';
@@ -44,29 +44,52 @@ class Booking extends Model
 	{
 		if ($id) {
 			return $this->db->table($this->table)
-				->join('kamars', 'kamars.id = bookings.id_kamar', 'left')
-				->join('pelanggans', 'pelanggans.id = bookings.id_pel', 'left')
-				->where('bookings.id', $id)
+				->join('pelanggans', 'pelanggans.id_pel = bookings.id_pel', 'left')
+				->join('kamars', 'kamars.id_kamar = bookings.id_kamar', 'left')
+				->where('bookings.id_booking', $id)
 				->get()->getRowArray();
 		} else {
 			return $this->db->table($this->table)
-				->join('kamars', 'kamars.id = bookings.id_kamar', 'left')
-				->join('pelanggans', 'pelanggans.id = bookings.id_pel', 'left')
-				->orderBy('bookings.id', 'desc')
+				->join('kamars', 'kamars.id_kamar = bookings.id_kamar', 'left')
+				->join('pelanggans', 'pelanggans.id_pel = bookings.id_pel', 'left')
+				->orderBy('bookings.id_booking', 'desc')
 				->get()->getResultArray();
 		}
 	}
 
-	public function simpan($post)
+	public function invoice($id)
+	{
+		return $this->db->table($this->table)
+			->join('pelanggans', 'pelanggans.id_pel = bookings.id_pel', 'left')
+			->join('kamars', 'kamars.id_kamar = bookings.id_kamar', 'left')
+			->where('bookings.id_booking', $id)
+			->get()->getResultArray();
+	}
+
+	public function simpan($post, $kamar)
 	{
 		$data = [
 			'id_kamar' => $post['kamar'],
 			'id_pel' => $post['pelanggan'],
 			'harga_per' => $post['optionsRadios'],
 			'check_in' => $post['checkin'],
+			'total' => $kamar['biaya']
 		];
 
 		$this->insert($data);
+	}
+
+	public function ubah($post, $kamar, $id)
+	{
+		$data = [
+			'id_kamar' => $post['kamar'],
+			'id_pel' => $post['pelanggan'],
+			'harga_per' => $post['optionsRadios'],
+			'check_in' => $post['checkin'],
+			'total' => $kamar['biaya']
+		];
+
+		$this->update($id, $data);
 	}
 
 	public function getLast()

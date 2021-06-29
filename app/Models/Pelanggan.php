@@ -8,7 +8,7 @@ class Pelanggan extends Model
 {
 	protected $DBGroup              = 'default';
 	protected $table                = 'pelanggans';
-	protected $primaryKey           = 'id';
+	protected $primaryKey           = 'id_pel';
 	protected $useAutoIncrement     = true;
 	protected $insertID             = 0;
 	protected $returnType           = 'array';

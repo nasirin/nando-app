@@ -8,7 +8,7 @@ class DetailKamar extends Model
 {
 	protected $DBGroup              = 'default';
 	protected $table                = 'detail_kamar';
-	protected $primaryKey           = 'id';
+	protected $primaryKey           = 'id_detail_kamar';
 	protected $useAutoIncrement     = true;
 	protected $insertID             = 0;
 	protected $returnType           = 'array';
@@ -44,15 +44,23 @@ class DetailKamar extends Model
 	{
 		if ($id) {
 			return $this->db->table($this->table)
-				->join('kamars', 'kamars.id = detail_kamar.id_kamar')
+				->join('kamars', 'kamars.id_kamar = detail_kamar.id_kamar')
 				->where('id_kamar', $id)
 				->get()->getRowArray();
 		} else {
 			return $this->db->table($this->table)
-				->join('kamars', 'kamars.id = detail_kamar.id_kamar')
+				->join('kamars', 'kamars.id_kamar = detail_kamar.id_kamar')
 				->orderBy('detail_kamar.id', 'desc')
 				->get()->getResultArray();
 		}
+	}
+
+	public function getBiaya($post)
+	{
+		return $this->db->table($this->table)
+			->where('id_kamar', $post['kamar'])
+			->where('waktu_sewa', $post['optionsRadios'])
+			->get()->getRowArray();
 	}
 	public function simpan($post, $id)
 	{

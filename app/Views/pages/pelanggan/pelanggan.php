@@ -58,11 +58,10 @@
                                         <td><?= $data['notelp'] ?></td>
                                         <td><?= $data['pekerjaan'] ?></td>
                                         <td>
-                                            <form action="/pelanggan/delete/<?= $data['id'] ?>" method="GET">
-                                                <a href="/pelanggan/edit/<?= $data['id'] ?>" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>
+                                            <form action="/pelanggan/delete/<?= $data['id_pel'] ?>" method="GET">
+                                                <a href="/pelanggan/edit/<?= $data['id_pel'] ?>" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>
                                                 <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
                                             </form>
-                                            <!-- <a href="/pelanggan/delete/<?= $data['id'] ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a> -->
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

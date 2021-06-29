@@ -29,13 +29,7 @@
                     <li><a href="/admin"><i class="fa fa-home"></i> Admin</a></li>
                     <li><a href="/pelanggan"><i class="fa fa-home"></i> Pelanggan</a></li>
                     <li><a href="/kamar"><i class="fa fa-home"></i> Data kamar</a></li>
-                    <li><a><i class="fa fa-home"></i> Transaksi <span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu">
-                            <li><a href="/booking">Booking</a></li>
-                            <li><a href="/pembayaran">Pembayaran</a></li>
-                            <li><a href="/jt">Jatuh Tempo</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="/booking"><i class="fa fa-home"></i> Booking</a></li>
                 </ul>
             </div>
         </div>

@@ -67,8 +67,10 @@ $routes->group('booking', function ($routes) {
 	$routes->post('tambah', 'Booking::store');
 	$routes->get('edit/(:num)', 'Booking::edit/$1');
 	$routes->post('edit/(:num)', 'Booking::update/$1');
-	$routes->get('delete/(:num)', 'Booking::destroy/$1');
+	$routes->post('delete/(:num)', 'Booking::destroy/$1');
 });
+
+$routes->get('invoice/(:num)', 'Invoice::index/$1');
 
 /*
  * --------------------------------------------------------------------

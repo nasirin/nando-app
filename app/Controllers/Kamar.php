@@ -19,7 +19,7 @@ class Kamar extends BaseController
 
 	public function index()
 	{
-		$data['kamar'] = $this->kamar->orderBy('id', 'desc')->findAll();
+		$data['kamar'] = $this->kamar->orderBy('id_kamar', 'desc')->findAll();
 		return view('pages/kamar/kamar', $data);
 	}
 
@@ -34,7 +34,7 @@ class Kamar extends BaseController
 		// dd($post);
 		$this->kamar->simpan($post);
 		$data_kamar = $this->kamar->getLastById();
-		$this->detailKamar->simpan($post, $data_kamar['id']);
+		$this->detailKamar->simpan($post, $data_kamar['id_kamar']);
 		session()->setFlashdata('success', 'Data has been created');
 		return redirect()->to('/kamar');
 	}

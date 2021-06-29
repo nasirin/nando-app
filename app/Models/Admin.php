@@ -8,7 +8,7 @@ class Admin extends Model
 {
 	protected $DBGroup              = 'default';
 	protected $table                = 'admins';
-	protected $primaryKey           = 'id';
+	protected $primaryKey           = 'id_adm';
 	protected $useAutoIncrement     = true;
 	protected $insertID             = 0;
 	protected $returnType           = 'array';
