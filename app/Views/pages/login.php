@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Nandao Kos | Login</title>
+    <title>Dpavillon | Login</title>
 
     <link rel="shortcut icon" type="icon" href="/assets/logo.png">
 
@@ -53,8 +53,8 @@
                             <br />
 
                             <div>
-                                <h1><img src="/assets/logo.png" width="30" alt=""> Nando Kos</h1>
-                                <p>Universitas Semarang</p>
+                                <h1><img src="/assets/logo.png" width="30" alt=""> Dpavillon</h1>
+                                <p>Kost Elit Semarang</p>
                             </div>
                         </div>
                     </form>

@@ -82,6 +82,8 @@ $routes->group('invoice', ['filter' => 'auth'], function ($routes) {
 	$routes->post('(:num)', 'Invoice::payment/$1');
 });
 
+$routes->post('report', 'Report::index/$1', ['filter' => 'auth']);
+
 
 
 /*

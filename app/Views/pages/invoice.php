@@ -93,7 +93,7 @@
                                                     <tr>
                                                         <td><?= $no++ ?></td>
                                                         <td><?= $data['tgl_bayar'] ?></td>
-                                                        <td><?= $data['nominal'] ?></td>
+                                                        <td><?= 'Rp ' . number_format($data['nominal'], 0, ',', '.') ?></td>
                                                         <td><?= $data['due_date'] ?></td>
                                                         <td><?= $data['status'] ?></td>
                                                     </tr>

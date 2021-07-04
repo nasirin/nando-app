@@ -19,7 +19,7 @@
             <!-- /page content -->
         </div>
     </div>
-
+    <?= $this->include('components/modal_laporan') ?>
     <?= $this->include('components/js') ?>
 
 </body>

@@ -47,12 +47,12 @@ class Invoice extends BaseController
 	public function payment($id)
 	{
 		$booking = $this->booking->get($id);
-		$pay = $this->payment->getDate($id);
+		$last = $this->payment->getLastById($id);
 
-		$this->payment->updateStatusSuccess($pay);
-		$this->payment->bayar($booking, $pay);
+		$this->payment->updateStatusSuccess($last);
+		$this->payment->bayar($booking, $last);
 
 		session()->setFlashdata('success', 'Data has been created');
-		return redirect()->to('/invoice/' . $pay['id_booking']);
+		return redirect()->to('/invoice/' . $last['id_booking']);
 	}
 }

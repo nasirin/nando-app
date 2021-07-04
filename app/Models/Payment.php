@@ -48,6 +48,13 @@ class Payment extends Model
 			->get()->getResultArray();
 	}
 
+	public function getLastById($id)
+	{
+		return $this->db->table($this->table)
+			->where('id_booking', $id)
+			->orderBy($this->primaryKey, 'desc')->get()->getRowArray();
+	}
+
 	public function getDate($id)
 	{
 		return $this->db->table($this->table)
@@ -153,23 +160,23 @@ class Payment extends Model
 		$this->db->table($this->table)->where('id_booking', $id)->update($data);
 	}
 
-	public function bayar($booking, $pay)
+	public function bayar($booking, $last)
 	{
 		if ($booking['harga_per'] == 'Mingguan') {
-			$tgl1    = $pay['due_date'];
-			$tgl2    = date('ymd', strtotime('+7 days', strtotime($tgl1)));
+			$tgl1    = $last['due_date'];
+			$tgl2    = date('ymd', strtotime('+7 day', strtotime($tgl1)));
 		} elseif ($booking['harga_per'] == 'Bulanan') {
-			$tgl1    = $pay['due_date'];
-			$tgl2    = date('ymd', strtotime('+1 months', strtotime($tgl1)));
+			$tgl1    = $last['due_date'];
+			$tgl2    = date('ymd', strtotime('+1 month', strtotime($tgl1)));
 		} else {
-			$tgl1    = $pay['due_date'];
-			$tgl2    = date('ymd', strtotime('+1 years', strtotime($tgl1)));
+			$tgl1    = $last['due_date'];
+			$tgl2    = date('ymd', strtotime('+1 year', strtotime($tgl1)));
 		}
 
 		$data = [
-			'id_booking' => $pay['id_booking'],
-			'tgl_bayar' => $pay['due_date'],
-			'nominal' => $pay['nominal'],
+			'id_booking' => $last['id_booking'],
+			'tgl_bayar' => $last['due_date'],
+			'nominal' => $last['nominal'],
 			'due_date' => $tgl2,
 			'status' => 'pending',
 		];

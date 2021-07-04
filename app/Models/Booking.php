@@ -14,7 +14,7 @@ class Booking extends Model
 	protected $returnType           = 'array';
 	protected $useSoftDeletes       = false;
 	protected $protectFields        = true;
-	protected $allowedFields        = ['id_kamar', 'id_pel', 'harga_per', 'check_in', 'check_out', 'total'];
+	protected $allowedFields        = ['id_kamar', 'id_pel', 'harga_per', 'check_in', 'check_out', 'due_date_booking', 'total'];
 
 	// Dates
 	protected $useTimestamps        = false;
@@ -57,6 +57,15 @@ class Booking extends Model
 		}
 	}
 
+	public function dueDateUpdate($post)
+	{
+		$data = [
+			'due_date_booking' => $post['due_date'],
+		];
+
+		$this->update($post['id_booking'], $data);
+	}
+
 	public function invoice($id)
 	{
 		return $this->db->table($this->table)
@@ -96,6 +105,7 @@ class Booking extends Model
 	{
 		return $this->db->table($this->table)->orderBy($this->primaryKey, 'desc')->get()->getRowArray();
 	}
+
 
 	public function checkout($id)
 	{

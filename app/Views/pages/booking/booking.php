@@ -35,7 +35,7 @@
                                     <th>Kamar</th>
                                     <th>Pelanggan</th>
                                     <th>Waktu sewa</th>
-                                    <th>Check in </th>
+                                    <th>Due Date </th>
                                     <th>Biaya</th>
                                     <th>More</th>
                                 </tr>
@@ -46,7 +46,7 @@
                                         <td><?= $data['nama_kamar'] ?></td>
                                         <td><?= $data['nama_pel'] ?></td>
                                         <td><?= $data['harga_per'] ?></td>
-                                        <td><?= $data['check_in'] ?></td>
+                                        <td><?= $data['due_date_booking'] ?></td>
                                         <td><?= 'Rp ' . number_format($data['total'], 0, ',', '.') ?></td>
                                         <td>
                                             <form action="/booking/delete/<?= $data['id_booking'] ?>" method="post">

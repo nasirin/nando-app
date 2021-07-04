@@ -45,7 +45,7 @@ class DetailKamar extends Model
 		if ($id) {
 			return $this->db->table($this->table)
 				->join('kamars', 'kamars.id_kamar = detail_kamar.id_kamar')
-				->where('id_kamar', $id)
+				->where('detail_kamar.id_kamar', $id)
 				->get()->getRowArray();
 		} else {
 			return $this->db->table($this->table)

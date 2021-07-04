@@ -52,6 +52,8 @@ class Booking extends BaseController
 		$this->kamar->updateStatus($post['kamar']);
 		$booking = $this->booking->getLast();
 		$this->payment->simpan($post, $booking);
+		$lastPayment = $this->payment->where('id_booking', $booking['id_booking'])->first();
+		$this->booking->dueDateUpdate($lastPayment);
 
 		session()->setFlashdata('success', 'Data has been created');
 		return redirect()->to('/booking');
