@@ -1,4 +1,4 @@
-<?= $this->extend('layouts/default') ?>
+<?= $this->extend('layouts/home') ?>
 
 <?= $this->section('content') ?>
 <div class="right_col" role="main">

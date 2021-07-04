@@ -38,6 +38,12 @@ class Pelanggan extends BaseController
 		}
 
 		$this->pelanggan->store($post, $imgName);
+
+		if ($this->pelanggan->affectedRows()) {
+			session()->setFlashdata('success', 'Data has been created');
+		} else {
+			session()->setFlashdata('error', 'Please Try again');
+		}
 		return redirect()->to('/pelanggan');
 	}
 
@@ -71,6 +77,12 @@ class Pelanggan extends BaseController
 
 		$this->pelanggan->ubah($post, $imgName, $id);
 
+		if ($this->pelanggan->affectedRows()) {
+			session()->setFlashdata('success', 'Data has been updated');
+		} else {
+			session()->setFlashdata('error', 'Please Try again');
+		}
+
 		return redirect()->to('/pelanggan');
 	}
 
@@ -84,7 +96,11 @@ class Pelanggan extends BaseController
 
 		$this->pelanggan->delete($id);
 
-		session()->setFlashdata('success', 'Data berhasil di hapus');
+		if ($this->pelanggan->affectedRows()) {
+			session()->setFlashdata('success', 'Data has been deleted');
+		} else {
+			session()->setFlashdata('error', 'Please Try again');
+		}
 		return redirect()->to('/pelanggan');
 	}
 }

@@ -35,7 +35,11 @@ class Kamar extends BaseController
 		$this->kamar->simpan($post);
 		$data_kamar = $this->kamar->getLastById();
 		$this->detailKamar->simpan($post, $data_kamar['id_kamar']);
-		session()->setFlashdata('success', 'Data has been created');
+		if ($this->kamar->affectedRows()) {
+			session()->setFlashdata('success', 'Data has been created');
+		} else {
+			session()->setFlashdata('error', 'Please Try again');
+		}
 		return redirect()->to('/kamar');
 	}
 
@@ -57,14 +61,22 @@ class Kamar extends BaseController
 		$post = $this->request->getVar();
 		$this->kamar->ubah($post, $id);
 		$this->detailKamar->ubah($post, $id);
-		session()->setFlashdata('success', 'Data has been updated');
+		if ($this->kanar->affectedRows()) {
+			session()->setFlashdata('success', 'Data has been updated');
+		} else {
+			session()->setFlashdata('error', 'Please Try again');
+		}
 		return redirect()->to('/kamar');
 	}
 
 	public function destroy($id)
 	{
 		$this->kamar->delete($id);
-		session()->setFlashdata('success', 'Data has been deleted');
+		if ($this->kamar->affectedRows()) {
+			session()->setFlashdata('success', 'Data has been deleted');
+		} else {
+			session()->setFlashdata('error', 'Please Try again');
+		}
 		return redirect()->to('/kamar');
 	}
 
@@ -72,9 +84,6 @@ class Kamar extends BaseController
 	{
 		$data['kamar'] = $this->detailKamar->get($id);
 		$data['detail'] = $this->detailKamar->where('id_kamar', $id)->findAll();
-
-		$test = $this->detailKamar->where('id_kamar', $id)->findAll();
-		// dd($test);
 		return view('pages/kamar/detail', $data);
 	}
 }

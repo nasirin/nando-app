@@ -3,6 +3,8 @@
 <?= $this->section('content') ?>
 <div class="right_col" role="main">
     <div class="">
+        <?= $this->include('components/alert') ?>
+        
         <div class="page-title">
             <div class="title_left">
                 <h3>Data Pelanggan</h3>

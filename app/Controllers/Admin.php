@@ -37,6 +37,12 @@ class Admin extends BaseController
 		$img->move('assets/img/admin/', $imgName);
 		$this->admin->store($post, $imgName);
 
+		if ($this->admin->affectedRows()) {
+			session()->setFlashdata('success', 'Data has been created');
+		} else {
+			session()->setFlashdata('error', 'Please Try again');
+		}
+
 		return redirect()->to('/admin');
 	}
 
@@ -64,6 +70,12 @@ class Admin extends BaseController
 
 		$this->admin->ubah($post, $imgName, $id);
 
+		if ($this->admin->affectedRows()) {
+			session()->setFlashdata('success', 'Data has been Updated');
+		} else {
+			session()->setFlashdata('error', 'Please Try again');
+		}
+
 		return redirect()->to('/admin');
 	}
 
@@ -76,7 +88,12 @@ class Admin extends BaseController
 
 		$this->admin->delete($id);
 
-		session()->setFlashdata('success', 'Data berhasil di hapus');
+		if ($this->admin->affectedRows()) {
+			session()->setFlashdata('success', 'Data has been deleted');
+		} else {
+			session()->setFlashdata('error', 'Please Try again');
+		}
+		
 		return redirect()->to('/admin');
 	}
 }

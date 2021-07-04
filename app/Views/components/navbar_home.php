@@ -15,6 +15,17 @@
                         <li><a href="/auth/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                     </ul>
                 </li>
+                <li class="">
+                    <a href="#laporan" class="user-profile" data-toggle="modal">
+                        <i class="fa fa-book"> Laporan</i>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#kebutuhan" data-toggle="modal" class="user-profile">
+                        <i class="fa fa-puzzle-piece"> Kebutuhan</i>
+                    </a>
+                </li>
+
             </ul>
         </nav>
     </div>

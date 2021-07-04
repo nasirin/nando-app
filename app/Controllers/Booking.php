@@ -55,7 +55,12 @@ class Booking extends BaseController
 		$lastPayment = $this->payment->where('id_booking', $booking['id_booking'])->first();
 		$this->booking->dueDateUpdate($lastPayment);
 
-		session()->setFlashdata('success', 'Data has been created');
+		if ($this->booking->affectedRows()) {
+			session()->setFlashdata('success', 'Data has been created');
+		} else {
+			session()->setFlashdata('error', 'Please Try again');
+		}
+
 		return redirect()->to('/booking');
 	}
 
@@ -86,7 +91,11 @@ class Booking extends BaseController
 		$this->booking->ubah($post, $kamar, $id);
 		$this->payment->ubah($post, $booking);
 
-		session()->setFlashdata('success', 'Data has been updated');
+		if ($this->booking->affectedRows()) {
+			session()->setFlashdata('success', 'Data has been updated');
+		} else {
+			session()->setFlashdata('error', 'Please Try again');
+		}
 		return redirect()->to('/booking');
 	}
 
@@ -95,7 +104,11 @@ class Booking extends BaseController
 		$getKamar = $this->booking->find($id);
 		$this->kamar->updateStatusAvalable($getKamar['id_kamar']);
 		$this->booking->delete($id);
-		session()->setFlashdata('success', 'Data has been deleted');
+		if ($this->booking->affectedRows()) {
+			session()->setFlashdata('success', 'Data has been deleted');
+		} else {
+			session()->setFlashdata('error', 'Please Try again');
+		}
 		return redirect()->to('/booking');
 	}
 
@@ -105,7 +118,11 @@ class Booking extends BaseController
 		$this->booking->checkout($id);
 		$this->kamar->updateStatusAvalable($booking['id_kamar']);
 		$this->payment->updateStatusChekout($booking['id_booking']);
-		session()->setFlashdata('success', 'Data has been updated');
+		if ($this->booking->affectedRows()) {
+			session()->setFlashdata('success', 'Checkout');
+		} else {
+			session()->setFlashdata('error', 'Please Try again');
+		}
 		return redirect()->to('/booking');
 	}
 }
