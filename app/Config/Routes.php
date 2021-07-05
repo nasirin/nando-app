@@ -89,7 +89,13 @@ $routes->group('kebutuhan', ['filter' => 'auth'], function ($routes) {
 	$routes->post('ubah/(:num)', 'Kebutuhan::update/$1');
 });
 
-$routes->post('report', 'Report::index/$1', ['filter' => 'auth']);
+// $routes->post('report', 'Report::index/$1', ['filter' => 'auth']);
+
+$routes->group('invoice', ['filter' => 'auth'], function ($routes) {
+	$routes->post('booking', 'Laporan::booking');
+	$routes->post('pemasukan', 'Laporan::pemasukan');
+	$routes->post('pengeluaran', 'Laporan::pengeluaran');
+});
 
 
 

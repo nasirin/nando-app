@@ -51,12 +51,10 @@ class Invoice extends BaseController
 
 		$this->payment->updateStatusSuccess($last);
 		$this->payment->bayar($booking, $last);
+		$last2 = $this->payment->getLastById($id);
+		$this->booking->dueDateUpdate($last2);
 
-		if ($this->payment->affectedRows()) {
-			session()->setFlashdata('success', 'Payment success');
-		} else {
-			session()->setFlashdata('error', 'Please Try again');
-		}
+		session()->setFlashdata('success', 'Payment success');
 		return redirect()->to('/invoice/' . $last['id_booking']);
 	}
 }

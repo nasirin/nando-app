@@ -14,7 +14,7 @@ class Payment extends Model
 	protected $returnType           = 'array';
 	protected $useSoftDeletes       = false;
 	protected $protectFields        = true;
-	protected $allowedFields        = ['id_booking', 'tgl_bayar', 'nominal', 'due_date', 'status', 'denda'];
+	protected $allowedFields        = ['id_booking', 'id_kamar', 'id_pel', 'tgl_bayar', 'nominal', 'due_date', 'status', 'denda'];
 
 	// Dates
 	protected $useTimestamps        = false;
@@ -100,6 +100,8 @@ class Payment extends Model
 
 		$data = [
 			'id_booking' => $booking['id_booking'],
+			'id_kamar' => $post['kamar'],
+			'id_pel' => $post['pelanggan'],
 			'tgl_bayar' => $post['checkin'],
 			'nominal' => $booking['total'],
 			'due_date' => $tgl2,
@@ -175,6 +177,8 @@ class Payment extends Model
 
 		$data = [
 			'id_booking' => $last['id_booking'],
+			'id_kamar' => $last['id_kamar'],
+			'id_pel' => $last['id_pel'],
 			'tgl_bayar' => $last['due_date'],
 			'nominal' => $last['nominal'],
 			'due_date' => $tgl2,
@@ -182,5 +186,28 @@ class Payment extends Model
 		];
 
 		$this->insert($data);
+	}
+
+	public function laporan($post)
+	{
+		return $this->db->table($this->table)
+			->join('bookings', 'bookings.id_booking = payments.id_booking', 'left')
+			->join('kamars', 'kamars.id_kamar = payments.id_kamar', 'left')
+			->join('pelanggans', 'pelanggans.id_pel = payments.id_pel', 'left')
+			->where('payments.status', $post['status'])
+			->get()->getResultArray();
+	}
+
+	public function totalNominal($post)
+	{
+		return $this->db->table($this->table)->selectSum('nominal')
+			->where('status', $post['status'])
+			->get()->getRowArray();
+	}
+	public function totalDenda($post)
+	{
+		return $this->db->table($this->table)->selectSum('denda')
+			->where('status', $post['status'])
+			->get()->getRowArray();
 	}
 }

@@ -16,9 +16,15 @@
                     </ul>
                 </li>
                 <li class="">
-                    <a href="#laporan" class="user-profile" data-toggle="modal">
+                    <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                         <i class="fa fa-book"> Laporan</i>
+                        <span class=" fa fa-angle-down"></span>
                     </a>
+                    <ul class="dropdown-menu dropdown-usermenu pull-right">
+                        <li><a href="#laporan-booking" data-toggle="modal" > Laporan Booking</a></li>
+                        <li><a href="#laporan-pemasukan" data-toggle="modal"> Laporan Pemasukan</a></li>
+                        <li><a href="#laporan-Pengeluaran" data-toggle="modal"> Laporan Pengeluaran</a></li>
+                    </ul>
                 </li>
                 <li class="">
                     <a href="#kebutuhan" data-toggle="modal" class="user-profile">
