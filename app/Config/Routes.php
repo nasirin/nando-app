@@ -93,8 +93,7 @@ $routes->group('kebutuhan', ['filter' => 'auth'], function ($routes) {
 
 $routes->group('invoice', ['filter' => 'auth'], function ($routes) {
 	$routes->post('booking', 'Laporan::booking');
-	$routes->post('pemasukan', 'Laporan::pemasukan');
-	$routes->post('pengeluaran', 'Laporan::pengeluaran');
+	$routes->post('keuangan', 'Laporan::keuangan');
 });
 
 

@@ -98,3 +98,115 @@ CRITICAL - 2021-07-05 09:05:40 --> Undefined index: status
 #5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #6 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
 #7 {main}
+CRITICAL - 2021-07-05 10:19:15 --> Undefined variable: post
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Views\pages\laporan\keuangan.php(56): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\Users\\Bon ca...', 56, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\Users\\Bon ca...')
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('pages/laporan/k...', Array, true)
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Laporan.php(72): view('pages/laporan/k...')
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Laporan->keuangan()
+#6 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#7 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#10 {main}
+CRITICAL - 2021-07-05 10:19:48 --> Undefined variable: tgl
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Views\pages\laporan\keuangan.php(56): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\Users\\Bon ca...', 56, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\Users\\Bon ca...')
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('pages/laporan/k...', Array, true)
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Laporan.php(72): view('pages/laporan/k...')
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Laporan->keuangan()
+#6 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#7 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#10 {main}
+CRITICAL - 2021-07-05 10:21:25 --> Undefined index: date
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Laporan.php(61): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\Users\\Bon ca...', 61, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Laporan->keuangan()
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#6 {main}
+ERROR - 2021-07-05 10:27:26 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`=` = '2021-07'' at line 3
+CRITICAL - 2021-07-05 10:27:26 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`=` = '2021-07'' at line 3
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT *\nFROM `...')
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Models\Kebutuhan.php(71): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Laporan.php(70): App\Models\Kebutuhan->laporan(Array)
+#6 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Laporan->keuangan()
+#7 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#8 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#11 {main}
+ERROR - 2021-07-05 10:30:55 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`=` = '2021-07'' at line 3
+CRITICAL - 2021-07-05 10:30:55 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`=` = '2021-07'' at line 3
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT *\nFROM `...')
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Models\Kebutuhan.php(71): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Laporan.php(70): App\Models\Kebutuhan->laporan(Array)
+#6 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Laporan->keuangan()
+#7 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#8 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#11 {main}
+CRITICAL - 2021-07-05 10:48:19 --> Undefined index: date
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Laporan.php(61): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\Users\\Bon ca...', 61, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Laporan->keuangan()
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#6 {main}
+CRITICAL - 2021-07-05 10:54:50 --> Undefined variable: total
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Laporan.php(77): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\Users\\Bon ca...', 77, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Laporan->keuangan()
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#6 {main}
+CRITICAL - 2021-07-05 11:07:55 --> Undefined variable: status
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Views\pages\laporan\booking.php(56): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\Users\\Bon ca...', 56, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\Users\\Bon ca...')
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('pages/laporan/b...', Array, true)
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Laporan.php(79): view('pages/laporan/b...', Array)
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Laporan->keuangan()
+#6 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#7 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#10 {main}
+CRITICAL - 2021-07-05 11:08:04 --> Undefined variable: status
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Views\pages\laporan\booking.php(56): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\Users\\Bon ca...', 56, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\Users\\Bon ca...')
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('pages/laporan/b...', Array, true)
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Laporan.php(79): view('pages/laporan/b...', Array)
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Laporan->keuangan()
+#6 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#7 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#10 {main}
+CRITICAL - 2021-07-05 11:08:23 --> Undefined variable: status
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Views\pages\laporan\booking.php(56): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\Users\\Bon ca...', 56, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\Users\\Bon ca...')
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('pages/laporan/b...', Array, true)
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Laporan.php(79): view('pages/laporan/b...', Array)
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Laporan->keuangan()
+#6 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#7 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#10 {main}

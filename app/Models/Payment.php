@@ -210,4 +210,27 @@ class Payment extends Model
 			->where('status', $post['status'])
 			->get()->getRowArray();
 	}
+
+	public function saldoNominalBulanLalu($post)
+	{
+		$tgl1    = $post['date'];
+		$tgl2    = date('ymd', strtotime('-1 month', strtotime($tgl1)));
+		// dd($tgl2);
+
+		return $this->db->table($this->table)->selectSum('nominal')
+			->where('status', 'success')
+			->where('due_date >=', $tgl2)
+			->get()->getRowArray();
+	}
+	public function saldoDendaBulanLalu($post)
+	{
+		$tgl1    = $post['date'];
+		$tgl2    = date('ymd', strtotime('-1 month', strtotime($tgl1)));
+		// dd($tgl2);
+
+		return $this->db->table($this->table)->selectSum('denda')
+			->where('status', 'success')
+			->where('due_date >=', $tgl2)
+			->get()->getRowArray();
+	}
 }

@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\Booking;
+use App\Models\Kebutuhan;
 use App\Models\Payment;
 use TCPDF;
 
@@ -11,10 +12,13 @@ class Laporan extends BaseController
 {
 	protected $payment;
 	protected $booking;
+	protected $kebutuhan;
+
 	public function __construct()
 	{
 		$this->payment = new Payment();
 		$this->booking = new Booking();
+		$this->kebutuhan = new Kebutuhan();
 	}
 
 	public function booking()
@@ -27,11 +31,6 @@ class Laporan extends BaseController
 			'totalNominal' => $this->payment->totalNominal($post),
 			'totalDenda' => $this->payment->totalDenda($post)
 		];
-		// $booking = $this->payment->totalDenda($post);
-
-		// dd($booking);
-
-		// return view('pages/laporan/booking', $data);
 
 		$html = view('pages/laporan/booking', $data);
 
@@ -55,11 +54,47 @@ class Laporan extends BaseController
 		$pdf->Output('Laporan Booking' . ' ' . $post['status'] . '.pdf', 'I');
 	}
 
-	public function pengeluaran()
+	public function keuangan()
 	{
-	}
+		$post = $this->request->getVar();
 
-	public function pemasukan()
-	{
+		$tgl1    = $post['date'];
+		$tgl2    = date('F Y', strtotime('-1 month', strtotime($tgl1)));
+
+		$saldoNominal = $this->payment->saldoNominalBulanLalu($post);
+		$saldoDenda = $this->payment->saldoDendaBulanLalu($post);
+		$totalKebutuhan = $this->kebutuhan->totalKebutuhan($post);
+
+		$data = [
+			'no' => 2,
+			'tgl' => $post['date'],
+			'tglSaldoBulanLalu' => $tgl2,
+			'saldoNominalBulanlalu' => $saldoNominal,
+			'saldoDendaBulanlalu' => $saldoDenda,
+			'kebutuhan' => $this->kebutuhan->laporan($post),
+			'saldoAkhir' => intval(($saldoNominal['nominal'] + $saldoDenda['denda']) - $totalKebutuhan['biaya'])
+		];
+		// return view('pages/laporan/keuangan', $data);
+
+		$html = view('pages/laporan/keuangan', $data);
+
+		$pdf = new TCPDF('L', PDF_UNIT, 'A4', true, 'UTF-8', false);
+
+		$pdf->SetCreator(PDF_CREATOR);
+		$pdf->SetAuthor('Dpavillon');
+		$pdf->SetTitle('Laporan-Keuangan');
+		$pdf->SetSubject('Lap-Keuangan');
+
+		$pdf->setPrintHeader(false);
+		$pdf->setPrintFooter(false);
+
+		$pdf->addPage();
+
+		// output the HTML content
+		$pdf->writeHTML($html, true, false, true, false, '');
+		//line ini penting
+		$this->response->setContentType('application/pdf');
+		//Close and output PDF document
+		$pdf->Output('Laporan Keuangan' . ' Periode ' . date('F Y', strtotime($post['date'])) . '.pdf', 'I');
 	}
 }

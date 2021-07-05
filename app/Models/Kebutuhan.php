@@ -63,4 +63,19 @@ class Kebutuhan extends Model
 
 		$this->update($id, $data);
 	}
+
+	public function laporan($post)
+	{
+		return $this->db->table($this->table)
+			->where('MONTH(tanggal)', date('m', strtotime($post['date'])))
+			->where('YEAR(tanggal)', date('Y', strtotime($post['date'])))
+			->get()->getResultArray();
+	}
+	public function totalKebutuhan($post)
+	{
+		return $this->db->table($this->table)->selectSum('biaya')
+			->where('MONTH(tanggal)', date('m', strtotime($post['date'])))
+			->where('YEAR(tanggal)', date('Y', strtotime($post['date'])))
+			->get()->getRowArray();
+	}
 }

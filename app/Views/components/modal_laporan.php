@@ -1,3 +1,4 @@
+<!-- modal laporan booking -->
 <div class="modal" tabindex="-1" role="dialog" id="laporan-booking">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -38,37 +39,35 @@
     </div>
 </div>
 
+<!-- modal laporan pemasukan -->
 <div class="modal" tabindex="-1" role="dialog" id="laporan-pemasukan">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Laporan Pemasukan</h5>
+                <h5 class="modal-title">Laporan Keuangan</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form action="laporan" method="post">
-
+                <form action="/laporan/keuangan" method="post" target="_blank">
+                    <?= csrf_field() ?>
                     <div class="form-group">
-                        <label>Waktu</label>
-                        <select name="laporan" id="" class="form-control">
-                            <option value="">-- Pilih --</option>
-                            <option value="bulanan">Bulanan</option>
-                            <option value="tahunan">Tahunan</option>
-                        </select>
-
+                        <label>Input Date</label>
+                        <input type="month" class="form-control" name="date" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Print</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </form>
-            </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Print</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
 </div>
-<div class="modal" tabindex="-1" role="dialog" id="laporan-pengeluaran">
+
+<!-- modal laporan pengeluaran -->
+<div class="modal" tabindex="-1" role="dialog" id="laporan-Pengeluaran">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -81,13 +80,8 @@
                 <form action="laporan" method="post">
 
                     <div class="form-group">
-                        <label>Waktu</label>
-                        <select name="laporan" id="" class="form-control">
-                            <option value="">-- Pilih --</option>
-                            <option value="bulanan">Bulanan</option>
-                            <option value="tahunan">Tahunan</option>
-                        </select>
-
+                        <label>Input Date</label>
+                        <input type="month" class="form-control" name="date" required>
                     </div>
                 </form>
             </div>
