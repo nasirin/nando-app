@@ -66,31 +66,37 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td style="width: 50px;">1</td>
-                    <td><?= date('d F Y') ?></td>
-                    <td>Saldo Bulan Lalu (<?= date('F Y', strtotime($tglSaldoBulanLalu)) ?>)</td>
-                    <td><?= 'Rp ' . number_format($saldoNominalBulanlalu['nominal'] + $saldoDendaBulanlalu['denda'], 0, ',', '.') ?></td>
-                    <td></td>
-                </tr>
-                <?php foreach ($kebutuhan as $data) : ?>
+                <?php if ($kebutuhan) : ?>
                     <tr>
-                        <td style="width: 50px;"><?= $no++ ?></td>
-                        <td><?= $data['tanggal'] ?></td>
-                        <td><?= $data['kebutuhan'] ?></td>
+                        <td style="width: 50px;">1</td>
+                        <td><?= date('d F Y') ?></td>
+                        <td>Saldo Bulan Lalu (<?= date('F Y', strtotime($tglSaldoBulanLalu)) ?>)</td>
+                        <td><?= 'Rp ' . number_format($saldoNominalBulanlalu['nominal'] + $saldoDendaBulanlalu['denda'], 0, ',', '.') ?></td>
                         <td></td>
-                        <td><?= 'Rp ' . number_format($data['biaya'], 0, ',', '.') ?></td>
                     </tr>
-                <?php endforeach; ?>
-                <tr>
-                    <th colspan="3">Total Saldo</th>
-                    <th><?= 'Rp ' . number_format($saldoNominalBulanlalu['nominal'] + $saldoDendaBulanlalu['denda'], 0, ',', '.') ?></th>
-                    <th></th>
-                </tr>
-                <tr>
-                    <th colspan="4">Saldo Akhir</th>
-                    <th><?= 'Rp ' . number_format($saldoAkhir, 0, ',', '.') ?></th>
-                </tr>
+                    <?php foreach ($kebutuhan as $data) : ?>
+                        <tr>
+                            <td style="width: 50px;"><?= $no++ ?></td>
+                            <td><?= $data['tanggal'] ?></td>
+                            <td><?= $data['kebutuhan'] ?></td>
+                            <td></td>
+                            <td><?= 'Rp ' . number_format($data['biaya'], 0, ',', '.') ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                    <tr>
+                        <th colspan="3">Total Saldo</th>
+                        <th><?= 'Rp ' . number_format($saldoNominalBulanlalu['nominal'] + $saldoDendaBulanlalu['denda'], 0, ',', '.') ?></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th colspan="4">Saldo Akhir</th>
+                        <th><?= 'Rp ' . number_format($saldoAkhir, 0, ',', '.') ?></th>
+                    </tr>
+                <?php else : ?>
+                    <tr>
+                        <p>Data Kosong</p>
+                    </tr>
+                <?php endif; ?>
             </tbody>
         </table>
     </section>
