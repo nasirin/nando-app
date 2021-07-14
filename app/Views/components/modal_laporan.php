@@ -9,7 +9,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="/laporan/booking" method="post" target="_blank">
+                <form action="/invoice/booking" method="post" target="_blank">
                     <?= csrf_field() ?>
                     <div class="form-group">
                         <label>Status</label>

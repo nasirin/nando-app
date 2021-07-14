@@ -80,7 +80,7 @@
                             <td style="width: 50px;"><?= $no++ ?></td>
                             <td><?= $data['nama_pel'] ?></td>
                             <td><?= $data['nama_kamar'] ?></td>
-                            <td><?= ucfirst($data['harga_per']) ?></td>
+                            <td><?= $data['harga_per'] ?></td>
                             <td><?= date('d F Y', strtotime($data['due_date'])) ?></td>
                             <?php if ($status == 'telat') : ?>
                                 <td><?= 'Rp ' . number_format($data['nominal'], 0, ',', '.') ?></td>
