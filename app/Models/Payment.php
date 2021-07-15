@@ -233,4 +233,32 @@ class Payment extends Model
 			->where('due_date >=', $tgl2)
 			->get()->getRowArray();
 	}
+
+	public function pendapatanKos($post)
+	{
+		return $this->db->table($this->table)->selectSum('nominal')
+			->where("YEAR(tgl_bayar)", date('Y', strtotime($post['date'])))
+			->where("MONTH(tgl_bayar)", date('m', strtotime($post['date'])))
+			->where('status', 'success')
+			->get()->getRowArray();
+	}
+
+	public function pendapatanKosTahunan($post)
+	{
+		return $this->db->table($this->table)->selectSum('nominal')->selectSum('denda')->select('tgl_bayar,nama_pel,nama_kamar')
+			->join('pelanggans', 'pelanggans.id_pel = payments.id_pel', 'left')
+			->join('kamars', 'kamars.id_kamar = payments.id_kamar', 'left')
+			->where("YEAR(tgl_bayar)", date('Y', strtotime($post['tahun'])))
+			->where('payments.status', 'success')
+			->groupBy('payments.id_pel')
+			->get()->getResultArray();
+	}
+
+	public function totalPendapatanTahunan($post)
+	{
+		return $this->db->table($this->table)->selectSum('nominal')->selectSum('denda')
+			->where("YEAR(tgl_bayar)", date('Y', strtotime($post['tahun'])))
+			->where('payments.status', 'success')
+			->get()->getRowArray();
+	}
 }

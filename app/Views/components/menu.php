@@ -1,7 +1,7 @@
 <div class="col-md-3 left_col">
     <div class="left_col scroll-view">
         <div class="navbar nav_title" style="border: 0;">
-            <a href="/" class="site_title"><img src="/assets/logo.png" width="30" alt=""> <span>Nando Kos</span></a>
+            <a href="/" class="site_title"><img src="/assets/logo.png" width="30" alt=""> <span>Dpavillon</span></a>
         </div>
 
         <div class="clearfix"></div>

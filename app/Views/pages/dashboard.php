@@ -6,7 +6,7 @@
     <div class="row">
         <div class="alert alert-success" role="alert">
             <h4 class="alert-heading">Well done!</h4>
-            <p>Selamat Datang Di Nando Kos.</p>
+            <p>Selamat Datang Di Dpavillon.</p>
         </div>
     </div>
 </div>

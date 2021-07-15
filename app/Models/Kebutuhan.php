@@ -71,11 +71,26 @@ class Kebutuhan extends Model
 			->where('YEAR(tanggal)', date('Y', strtotime($post['date'])))
 			->get()->getResultArray();
 	}
+
+	public function laporanTahunan($post)
+	{
+		return $this->db->table($this->table)
+			->where('YEAR(tanggal)', date('Y', strtotime($post['tahun'])))
+			->get()->getResultArray();
+	}
+
 	public function totalKebutuhan($post)
 	{
 		return $this->db->table($this->table)->selectSum('biaya')
 			->where('MONTH(tanggal)', date('m', strtotime($post['date'])))
 			->where('YEAR(tanggal)', date('Y', strtotime($post['date'])))
+			->get()->getRowArray();
+	}
+
+	public function laporanTotalKebutuhan($post)
+	{
+		return $this->db->table($this->table)->selectSum('biaya')
+			->where('YEAR(tanggal)', date('Y', strtotime($post['tahun'])))
 			->get()->getRowArray();
 	}
 }

@@ -40,17 +40,17 @@
 </div>
 
 <!-- modal laporan pemasukan -->
-<div class="modal" tabindex="-1" role="dialog" id="laporan-pemasukan">
+<div class="modal" tabindex="-1" role="dialog" id="laporan-pemasukan-bulanan">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Laporan Keuangan</h5>
+                <h5 class="modal-title">Laporan Keuangan Bulanan</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form action="/laporan/keuangan" method="post" target="_blank">
+                <form action="/invoice/keuangan/bulanan" method="post" target="_blank">
                     <?= csrf_field() ?>
                     <div class="form-group">
                         <label>Input Date</label>
@@ -66,66 +66,25 @@
     </div>
 </div>
 
-<!-- modal laporan pengeluaran -->
-<div class="modal" tabindex="-1" role="dialog" id="laporan-Pengeluaran">
+<div class="modal" tabindex="-1" role="dialog" id="laporan-pemasukan-tahunan">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Laporan Pengeluaran</h5>
+                <h5 class="modal-title">Laporan Keuangan Tahunan</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form action="laporan" method="post">
-
-                    <div class="form-group">
-                        <label>Input Date</label>
-                        <input type="month" class="form-control" name="date" required>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Print</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="modal" tabindex="-1" role="dialog" id="kebutuhan">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Form Kebutuhan</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="/kebutuhan" method="post">
+                <form action="/invoice/keuangan/tahunan" method="post" target="_blank">
                     <?= csrf_field() ?>
                     <div class="form-group">
-                        <label>Keterangan <small>*</small></label>
-                        <input type="text" name="keterangan" class="form-control" required>
+                        <label>Input Date</label>
+                        <select name="tahun" id="yearpicker" class="form-control"></select>
                     </div>
-                    <div class="form-group">
-                        <label>Tanggal <small>*</small></label>
-                        <input type="date" name="tanggal" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Biaya <small>*</small></label>
-                        <input type="number" min="0" name="biaya" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Note </label>
-                        <textarea name="note" class="form-control" cols="30" rows="10"></textarea>
-                    </div>
-
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Save changes</button>
-                        <a href="/kebutuhan" class="btn btn-info">Lihat Data</a>
+                        <button type="submit" class="btn btn-primary">Print</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </form>
             </div>

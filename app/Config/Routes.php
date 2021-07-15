@@ -80,6 +80,9 @@ $routes->group('booking', ['filter' => 'auth'], function ($routes) {
 $routes->group('invoice', ['filter' => 'auth'], function ($routes) {
 	$routes->get('(:num)', 'Invoice::index/$1');
 	$routes->post('(:num)', 'Invoice::payment/$1');
+	$routes->post('booking', 'Laporan::booking');
+	$routes->post('keuangan/tahunan', 'Laporan::keuanganTahunan');
+	$routes->post('keuangan/bulanan', 'Laporan::keuanganBulanan');
 });
 
 $routes->group('kebutuhan', ['filter' => 'auth'], function ($routes) {
@@ -88,14 +91,6 @@ $routes->group('kebutuhan', ['filter' => 'auth'], function ($routes) {
 	$routes->post('/', 'Kebutuhan::store');
 	$routes->post('ubah/(:num)', 'Kebutuhan::update/$1');
 });
-
-// $routes->post('report', 'Report::index/$1', ['filter' => 'auth']);
-
-$routes->group('invoice', ['filter' => 'auth'], function ($routes) {
-	$routes->post('booking', 'Laporan::booking');
-	$routes->post('keuangan', 'Laporan::keuangan');
-});
-
 
 
 /*

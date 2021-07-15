@@ -54,36 +54,28 @@ class Laporan extends BaseController
 		$pdf->Output('Laporan Booking' . ' ' . $post['status'] . '.pdf', 'I');
 	}
 
-	public function keuangan()
+	public function keuanganTahunan()
 	{
 		$post = $this->request->getVar();
 
-		$tgl1    = $post['date'];
-		$tgl2    = date('F Y', strtotime('-1 month', strtotime($tgl1)));
-
-		$saldoNominal = $this->payment->saldoNominalBulanLalu($post);
-		$saldoDenda = $this->payment->saldoDendaBulanLalu($post);
-		$totalKebutuhan = $this->kebutuhan->totalKebutuhan($post);
-
 		$data = [
-			'no' => 2,
-			'tgl' => $post['date'],
-			'tglSaldoBulanLalu' => $tgl2,
-			'saldoNominalBulanlalu' => $saldoNominal,
-			'saldoDendaBulanlalu' => $saldoDenda,
-			'kebutuhan' => $this->kebutuhan->laporan($post),
-			'saldoAkhir' => intval(($saldoNominal['nominal'] + $saldoDenda['denda']) - $totalKebutuhan['biaya'])
+			'noPemasukan' => 1,
+			'noPengeluaran' => 1,
+			'tahun' => $post['tahun'],
+			'pendapatanKos' => $this->payment->pendapatanKosTahunan($post),
+			'totalPendapatanKos' => $this->payment->totalPendapatanTahunan($post),
+			'pengeluaran' => $this->kebutuhan->laporanTahunan($post),
+			'totalPengeluaranKos' => $this->kebutuhan->laporanTotalKebutuhan($post),
 		];
-		// return view('pages/laporan/keuangan', $data);
 
-		$html = view('pages/laporan/keuangan', $data);
+		$html = view('pages/laporan/keuangan_tahunan', $data);
 
 		$pdf = new TCPDF('L', PDF_UNIT, 'A4', true, 'UTF-8', false);
 
 		$pdf->SetCreator(PDF_CREATOR);
 		$pdf->SetAuthor('Dpavillon');
-		$pdf->SetTitle('Laporan-Keuangan');
-		$pdf->SetSubject('Lap-Keuangan');
+		$pdf->SetTitle('Laporan-Keuangan-Tahunan' . $post['tahun']);
+		$pdf->SetSubject('Keuangan-Tahunan' . $post['tahun']);
 
 		$pdf->setPrintHeader(false);
 		$pdf->setPrintFooter(false);
@@ -95,6 +87,40 @@ class Laporan extends BaseController
 		//line ini penting
 		$this->response->setContentType('application/pdf');
 		//Close and output PDF document
-		$pdf->Output('Laporan Keuangan' . ' Periode ' . date('F Y', strtotime($post['date'])) . '.pdf', 'I');
+		$pdf->Output('Laporan Keuangan Tahunan' . ' ' . $post['tahun'] . '.pdf', 'I');
+	}
+
+	public function keuanganBulanan()
+	{
+		$post = $this->request->getVar();
+
+		$data = [
+			'no' => 2,
+			'date' => $post['date'],
+			'pendapatanKos' => $this->payment->pendapatanKos($post),
+			'pengeluaran' => $this->kebutuhan->laporan($post),
+			'totalPengeluaran' => $this->kebutuhan->totalKebutuhan($post)
+		];
+
+		$html = view('pages/laporan/keuangan_bulanan', $data);
+
+		$pdf = new TCPDF('L', PDF_UNIT, 'A4', true, 'UTF-8', false);
+
+		$pdf->SetCreator(PDF_CREATOR);
+		$pdf->SetAuthor('Dpavillon');
+		$pdf->SetTitle('Laporan-Keuangan-Bulanan' . $post['date']);
+		$pdf->SetSubject('Keuangan-Bulanan' . $post['date']);
+
+		$pdf->setPrintHeader(false);
+		$pdf->setPrintFooter(false);
+
+		$pdf->addPage();
+
+		// output the HTML content
+		$pdf->writeHTML($html, true, false, true, false, '');
+		//line ini penting
+		$this->response->setContentType('application/pdf');
+		//Close and output PDF document
+		$pdf->Output('Laporan Keuangan Bulanan' . ' ' . $post['date'] . '.pdf', 'I');
 	}
 }

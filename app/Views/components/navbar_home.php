@@ -22,7 +22,8 @@
                     </a>
                     <ul class="dropdown-menu dropdown-usermenu pull-right">
                         <li><a href="#laporan-booking" data-toggle="modal" > Laporan Booking</a></li>
-                        <li><a href="#laporan-pemasukan" data-toggle="modal"> Laporan keuangan</a></li>
+                        <li><a href="#laporan-pemasukan-bulanan" data-toggle="modal"> Laporan keuangan Bulanan</a></li>
+                        <li><a href="#laporan-pemasukan-tahunan" data-toggle="modal"> Laporan keuangan Tahunan</a></li>
                     </ul>
                 </li>
                 <li class="">
