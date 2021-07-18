@@ -9,5 +9,7 @@
             <p>Selamat Datang Di Dpavillon.</p>
         </div>
     </div>
+
+    <?= $this->include('components/modal_kebutuhan') ?>
 </div>
 <?= $this->endSection() ?>

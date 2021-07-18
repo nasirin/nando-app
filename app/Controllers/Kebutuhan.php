@@ -26,6 +26,7 @@ class Kebutuhan extends BaseController
 	public function store()
 	{
 		$post = $this->request->getVar();
+		// dd($post);
 		$this->kebutuhan->store($post);
 		if ($this->kebutuhan->affectedRows()) {
 			session()->setFlashdata('success', 'Data has been created');

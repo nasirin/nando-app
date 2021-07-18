@@ -47,7 +47,7 @@
                                         <td><?= $data['nama_kamar'] ?></td>
                                         <td><?= $data['nama_pel'] ?></td>
                                         <td><?= $data['harga_per'] ?></td>
-                                        <td><?= $data['due_date_booking'] ?></td>
+                                        <td><?= date('d F Y', strtotime($data['due_date_booking']))  ?></td>
                                         <td><?= 'Rp ' . number_format($data['total'], 0, ',', '.') ?></td>
                                         <td>
                                             <form action="/booking/delete/<?= $data['id_booking'] ?>" method="post">

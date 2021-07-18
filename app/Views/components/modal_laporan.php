@@ -20,15 +20,10 @@
                             <option value="telat">Telat</option>
                         </select>
                     </div>
-                    <!-- <div class="form-group">
-                        <label>Waktu</label>
-                        <select name="waktu" id="" class="form-control">
-                            <option value="">-- Pilih --</option>
-                            <option value="bulan">Bulan ini</option>
-                            <option value="tahun">Tahun ini</option>                            
-                        </select>
-
-                    </div> -->
+                    <div class="form-group">
+                        <label>Tanggal Bayar</label>
+                        <input type="date" name="tglBayar" required class="form-control">
+                    </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary">Print</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

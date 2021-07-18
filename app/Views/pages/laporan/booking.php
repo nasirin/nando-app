@@ -54,6 +54,7 @@
         <p><?= date('d F Y') ?></p>
         <h1>Laporan Booking</h1>
         <p class="text-center">Status : <?= ucwords($status) ?></p>
+        <p class="text-center">Tanggal Bayar : <?= date('d F Y', strtotime($tglBayar)) ?></p>
 
         <table class="table table-bordered">
             <thead>

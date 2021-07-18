@@ -57,74 +57,27 @@
 
         <table class="table table-bordered table-sm" style="margin-bottom: 100px;">
             <thead>
-                <p>Pendapatan Kos</p>
-                <!-- <tr>
-                    <th colspan="6">Pendapatan Kos</th>
-                </tr> -->
                 <tr>
                     <th style="width: 50px;">NO.</th>
                     <th>Bulan</th>
-                    <th>Keterangan</th>
-                    <th>Pelanggan</th>
-                    <th>Kamar</th>
-                    <th>Pemasukan</th>
+                    <th>Hasil</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($pendapatanKos as $data) : ?>
                     <tr>
-                        <td style="width: 50px;"><?= $noPemasukan++ ?></td>
-                        <td><?= date('F Y', strtotime($data['tgl_bayar'])) ?></td>
-                        <td>Pedapatan Kos</td>
-                        <td><?= $data['nama_pel'] ?></td>
-                        <td><?= $data['nama_kamar'] ?></td>
+                        <td style="width: 50px;"><?= $no++ ?></td>
+                        <td><?= date('F', strtotime($data['tgl_bayar'])) ?></td>
                         <td><?= 'Rp ' . number_format($data['nominal'] + $data['denda'], 0, ',', '.') ?></td>
                     </tr>
-                <?php endforeach; ?>
+                <?php endforeach ?>
             </tbody>
-        </table>
-
-        <table class="table table-bordered table-sm mb-5">
-            <thead>
-                <p>Pengeluaran Kos</p>
-                <!-- <tr>
-                    <th colspan="4">Pengeluaran Kos</th>
-                </tr> -->
+            <tfoot>
                 <tr>
-                    <th style="width: 50px;">NO.</th>
-                    <th>Bulan / Tahun</th>
-                    <th>Keterangan</th>
-                    <th>Pengeluaran</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($pengeluaran as $data) : ?>
-                    <tr>
-                        <td style="width: 50px;"><?= $noPengeluaran++ ?></td>
-                        <td><?= date('F Y', strtotime($data['tanggal'])) ?></td>
-                        <td><?= $data['kebutuhan'] ?></td>
-                        <td><?= 'Rp ' . number_format($data['biaya'], 0, ',', '.') ?></td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-
-        <table class="table table-bordered table-sm">
-            <thead>
-                <p>Total</p>
-                <tr>
-                    <th>Total Pemasukan</th>
-                    <th>Total Pengeluaran</th>
-                    <th>Totang Pendapatan</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
+                    <th colspan="2">Total</th>
                     <td><?= 'Rp ' . number_format($totalPendapatanKos['nominal'] + $totalPendapatanKos['denda'], 0, ',', '.') ?></td>
-                    <td><?= 'Rp ' . number_format($totalPengeluaranKos['biaya'], 0, ',', '.') ?></td>
-                    <td><?= 'Rp ' . number_format(($totalPendapatanKos['nominal'] + $totalPendapatanKos['denda']) - $totalPengeluaranKos['biaya'], 0, ',', '.') ?></td>
                 </tr>
-            </tbody>
+            </tfoot>
         </table>
     </section>
 

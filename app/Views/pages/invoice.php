@@ -67,7 +67,7 @@
                                                     <td><?= $data['nama_kamar'] ?></td>
                                                     <td><?= $data['luas'] ?></td>
                                                     <td><?= $data['harga_per'] ?></td>
-                                                    <td><?= $data['check_in'] ?></td>
+                                                    <td><?= date('d F Y', strtotime($data['check_in'])) ?></td>
                                                     <td><?= 'Rp' . number_format($data['total'], 0, ',', '.') ?></td>
                                                 </tr>
                                             <?php endforeach; ?>
@@ -92,9 +92,9 @@
                                                 foreach ($payment as $data) : ?>
                                                     <tr>
                                                         <td><?= $no++ ?></td>
-                                                        <td><?= $data['tgl_bayar'] ?></td>
+                                                        <td><?= date('d F Y', strtotime($data['tgl_bayar'])) ?></td>
                                                         <td><?= 'Rp ' . number_format($data['nominal'], 0, ',', '.') ?></td>
-                                                        <td><?= $data['due_date'] ?></td>
+                                                        <td><?= date('d F Y', strtotime($data['due_date'])) ?></td>
                                                         <td><?= $data['status'] ?></td>
                                                     </tr>
                                                 <?php endforeach; ?>

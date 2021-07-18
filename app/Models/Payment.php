@@ -14,7 +14,7 @@ class Payment extends Model
 	protected $returnType           = 'array';
 	protected $useSoftDeletes       = false;
 	protected $protectFields        = true;
-	protected $allowedFields        = ['id_booking', 'id_kamar', 'id_pel', 'tgl_bayar', 'nominal', 'due_date', 'status', 'denda'];
+	protected $allowedFields        = ['id_booking', 'id_kamar', 'id_pel', 'tgl_bayar', 'nominal', 'due_date', 'status', 'denda', 'bulan'];
 
 	// Dates
 	protected $useTimestamps        = false;
@@ -106,6 +106,7 @@ class Payment extends Model
 			'nominal' => $booking['total'],
 			'due_date' => $tgl2,
 			'status' => 'pending',
+			'bulan' => date('m', strtotime($post['checkin']))
 		];
 
 		$this->insert($data);
@@ -183,6 +184,7 @@ class Payment extends Model
 			'nominal' => $last['nominal'],
 			'due_date' => $tgl2,
 			'status' => 'pending',
+			'bulan' => date('m', strtotime($last['due_date']))
 		];
 
 		$this->insert($data);
@@ -195,6 +197,7 @@ class Payment extends Model
 			->join('kamars', 'kamars.id_kamar = payments.id_kamar', 'left')
 			->join('pelanggans', 'pelanggans.id_pel = payments.id_pel', 'left')
 			->where('payments.status', $post['status'])
+			->where('payments.tgl_bayar', $post['tglBayar'])
 			->get()->getResultArray();
 	}
 
@@ -211,28 +214,28 @@ class Payment extends Model
 			->get()->getRowArray();
 	}
 
-	public function saldoNominalBulanLalu($post)
-	{
-		$tgl1    = $post['date'];
-		$tgl2    = date('ymd', strtotime('-1 month', strtotime($tgl1)));
-		// dd($tgl2);
+	// public function saldoNominalBulanLalu($post)
+	// {
+	// 	$tgl1    = $post['date'];
+	// 	$tgl2    = date('ymd', strtotime('-1 month', strtotime($tgl1)));
+	// 	// dd($tgl2);
 
-		return $this->db->table($this->table)->selectSum('nominal')
-			->where('status', 'success')
-			->where('due_date >=', $tgl2)
-			->get()->getRowArray();
-	}
-	public function saldoDendaBulanLalu($post)
-	{
-		$tgl1    = $post['date'];
-		$tgl2    = date('ymd', strtotime('-1 month', strtotime($tgl1)));
-		// dd($tgl2);
+	// 	return $this->db->table($this->table)->selectSum('nominal')
+	// 		->where('status', 'success')
+	// 		->where('due_date >=', $tgl2)
+	// 		->get()->getRowArray();
+	// }
+	// public function saldoDendaBulanLalu($post)
+	// {
+	// 	$tgl1    = $post['date'];
+	// 	$tgl2    = date('ymd', strtotime('-1 month', strtotime($tgl1)));
+	// 	// dd($tgl2);
 
-		return $this->db->table($this->table)->selectSum('denda')
-			->where('status', 'success')
-			->where('due_date >=', $tgl2)
-			->get()->getRowArray();
-	}
+	// 	return $this->db->table($this->table)->selectSum('denda')
+	// 		->where('status', 'success')
+	// 		->where('due_date >=', $tgl2)
+	// 		->get()->getRowArray();
+	// }
 
 	public function pendapatanKos($post)
 	{
@@ -245,12 +248,12 @@ class Payment extends Model
 
 	public function pendapatanKosTahunan($post)
 	{
-		return $this->db->table($this->table)->selectSum('nominal')->selectSum('denda')->select('tgl_bayar,nama_pel,nama_kamar')
+		return $this->db->table($this->table)->selectSum('nominal')->selectSum('denda')->select('tgl_bayar')
 			->join('pelanggans', 'pelanggans.id_pel = payments.id_pel', 'left')
 			->join('kamars', 'kamars.id_kamar = payments.id_kamar', 'left')
 			->where("YEAR(tgl_bayar)", date('Y', strtotime($post['tahun'])))
 			->where('payments.status', 'success')
-			->groupBy('payments.id_pel')
+			->groupBy('payments.bulan')
 			->get()->getResultArray();
 	}
 

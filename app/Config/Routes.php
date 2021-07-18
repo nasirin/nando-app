@@ -87,8 +87,8 @@ $routes->group('invoice', ['filter' => 'auth'], function ($routes) {
 
 $routes->group('kebutuhan', ['filter' => 'auth'], function ($routes) {
 	$routes->get('/', 'Kebutuhan');
-	$routes->get('hapus/(:num)', 'Kebutuhan::destroy/$1');
 	$routes->post('/', 'Kebutuhan::store');
+	$routes->get('hapus/(:num)', 'Kebutuhan::destroy/$1');
 	$routes->post('ubah/(:num)', 'Kebutuhan::update/$1');
 });
 

@@ -48,6 +48,7 @@ class Invoice extends BaseController
 	{
 		$booking = $this->booking->get($id);
 		$last = $this->payment->getLastById($id);
+		// dd($last);
 
 		$this->payment->updateStatusSuccess($last);
 		$this->payment->bayar($booking, $last);

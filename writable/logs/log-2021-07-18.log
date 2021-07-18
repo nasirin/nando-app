@@ -1,0 +1,66 @@
+CRITICAL - 2021-07-18 09:11:30 --> You must provide a valid column name not separated by comma.
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(518): CodeIgniter\Database\Exceptions\DataException::forInvalidArgument('column name not...')
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(471): CodeIgniter\Database\BaseBuilder->maxMinAvgSum('nominal,denda', '', 'SUM')
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Models\Payment.php(249): CodeIgniter\Database\BaseBuilder->selectSum('nominal,denda')
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Laporan.php(68): App\Models\Payment->pendapatanKosTahunan(Array)
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Laporan->keuanganTahunan()
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#6 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#9 {main}
+ERROR - 2021-07-18 09:15:06 --> FUNCTION payments.MONTH does not exist. Check the 'Function Name Parsing and Resolution' section in the Reference Manual
+CRITICAL - 2021-07-18 09:15:06 --> FUNCTION payments.MONTH does not exist. Check the 'Function Name Parsing and Resolution' section in the Reference Manual
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT SUM(`nom...')
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(`nom...')
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(`nom...')
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`nom...', Array, false)
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Models\Payment.php(255): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Laporan.php(68): App\Models\Payment->pendapatanKosTahunan(Array)
+#6 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Laporan->keuanganTahunan()
+#7 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#8 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#11 {main}
+CRITICAL - 2021-07-18 09:48:25 --> Trying to access array offset on value of type null
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Models\Booking.php(85): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\Users\\Bon ca...', 85, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Booking.php(51): App\Models\Booking->simpan(Array, NULL)
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Booking->store()
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Booking))
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#7 {main}
+CRITICAL - 2021-07-18 09:49:16 --> Trying to access array offset on value of type null
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Views\pages\kamar\detail.php(8): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\Users\\Bon ca...', 8, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\Users\\Bon ca...')
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('pages/kamar/det...', Array, true)
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Kamar.php(87): view('pages/kamar/det...', Array)
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Kamar->show('17')
+#6 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kamar))
+#7 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#10 {main}
+CRITICAL - 2021-07-18 09:50:11 --> A non well formed numeric value encountered
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8, 'A non well form...', 'C:\\Users\\Bon ca...', 109, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Models\Payment.php(109): date('m', '2021-07-18')
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Booking.php(54): App\Models\Payment->simpan(Array, Array)
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Booking->store()
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Booking))
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#8 {main}
+CRITICAL - 2021-07-18 09:51:30 --> A non well formed numeric value encountered
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8, 'A non well form...', 'C:\\Users\\Bon ca...', 109, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Models\Payment.php(109): date('m', '2021-07-18')
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Booking.php(54): App\Models\Payment->simpan(Array, Array)
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Booking->store()
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Booking))
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#8 {main}

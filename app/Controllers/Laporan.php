@@ -24,13 +24,17 @@ class Laporan extends BaseController
 	public function booking()
 	{
 		$post = $this->request->getVar();
+
 		$data = [
 			'no' => 1,
 			'booking' => $this->payment->laporan($post),
 			'status' => $post['status'],
+			'tglBayar' => $post['tglBayar'],
 			'totalNominal' => $this->payment->totalNominal($post),
 			'totalDenda' => $this->payment->totalDenda($post)
 		];
+
+		// return view('pages/laporan/booking', $data);
 
 		$html = view('pages/laporan/booking', $data);
 
@@ -57,17 +61,16 @@ class Laporan extends BaseController
 	public function keuanganTahunan()
 	{
 		$post = $this->request->getVar();
-
+		
 		$data = [
-			'noPemasukan' => 1,
-			'noPengeluaran' => 1,
+			'no' => 1,
 			'tahun' => $post['tahun'],
 			'pendapatanKos' => $this->payment->pendapatanKosTahunan($post),
 			'totalPendapatanKos' => $this->payment->totalPendapatanTahunan($post),
 			'pengeluaran' => $this->kebutuhan->laporanTahunan($post),
 			'totalPengeluaranKos' => $this->kebutuhan->laporanTotalKebutuhan($post),
 		];
-
+		
 		$html = view('pages/laporan/keuangan_tahunan', $data);
 
 		$pdf = new TCPDF('L', PDF_UNIT, 'A4', true, 'UTF-8', false);
