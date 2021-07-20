@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\Booking;
+use App\Models\Kebutuhan;
+use App\Models\Laporan;
 use App\Models\Payment;
 use DateTime;
 
@@ -11,11 +13,15 @@ class Invoice extends BaseController
 {
 	protected $booking;
 	protected $payment;
+	protected $kebutuhan;
+	protected $laporan;
 
 	public function __construct()
 	{
 		$this->booking = new Booking();
 		$this->payment = new Payment();
+		$this->laporan = new Laporan();
+		$this->kebutuhan = new Kebutuhan();
 	}
 	public function index($id)
 	{
@@ -48,12 +54,17 @@ class Invoice extends BaseController
 	{
 		$booking = $this->booking->get($id);
 		$last = $this->payment->getLastById($id);
-		// dd($last);
 
 		$this->payment->updateStatusSuccess($last);
 		$this->payment->bayar($booking, $last);
 		$last2 = $this->payment->getLastById($id);
 		$this->booking->dueDateUpdate($last2);
+
+		$totalPayment = $this->payment->pendapatanKosTahunan($last);
+
+		// $getLaporan = $this->laporan->where('bulan', $last['bulan'])->where('print', date('Y', strtotime($totalPayment['tgl_bayar'])))->get()->getRowArray();
+		// dd($totalPayment);
+		$this->laporan->simpanKebutuhan($totalPayment);
 
 		session()->setFlashdata('success', 'Payment success');
 		return redirect()->to('/invoice/' . $last['id_booking']);

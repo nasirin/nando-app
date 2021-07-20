@@ -59,23 +59,103 @@
             <thead>
                 <tr>
                     <th style="width: 50px;">NO.</th>
-                    <th>Bulan</th>
-                    <th>Hasil</th>
+                    <th>BULAN</th>
+                    <th>PEMASUKAN</th>
+                    <th>PENGELUARAN</th>
+                    <th>TOTAL</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($pendapatanKos as $data) : ?>
-                    <tr>
-                        <td style="width: 50px;"><?= $no++ ?></td>
-                        <td><?= date('F', strtotime($data['tgl_bayar'])) ?></td>
-                        <td><?= 'Rp ' . number_format($data['nominal'] + $data['denda'], 0, ',', '.') ?></td>
-                    </tr>
-                <?php endforeach ?>
+                <tr>
+                    <td style="width: 50px;">1</td>
+                    <td>Januari</td>
+                    <td><?= $pemasukan1 ? 'Rp ' . number_format($pemasukan1['nominal'] + $pemasukan1['denda'], 0, ',', '.') : 'Rp .0' ?></td>
+                    <td><?= $pengeluaran1['biaya'] ? 'Rp ' . number_format($pengeluaran1['biaya'], 0, ',', '.')  : 'Rp 0' ?></td>
+                    <td><?= 'Rp ' . number_format($pemasukan1['nominal'] + $pemasukan1['denda'] - $pengeluaran1['biaya'], 0, ',', '.') ?></td>
+                </tr>
+                <tr>
+                    <td style="width: 50px;">2</td>
+                    <td>Februari</td>
+                    <td><?= $pemasukan2 ? 'Rp ' . number_format($pemasukan2['nominal'] + $pemasukan2['denda'], 0, ',', '.') : 'Rp .0' ?></td>
+                    <td><?= $pengeluaran2['biaya'] ? 'Rp ' . number_format($pengeluaran2['biaya'], 0, ',', '.')  : 'Rp 0' ?></td>
+                    <td><?= 'Rp ' . number_format($pemasukan2['nominal'] + $pemasukan2['denda'] - $pengeluaran2['biaya'], 0, ',', '.') ?></td>
+
+                </tr>
+                <tr>
+                    <td style="width: 50px;">3</td>
+                    <td>Maret</td>
+                    <td><?= $pemasukan3 ? 'Rp ' . number_format($pemasukan3['nominal'] + $pemasukan3['denda'], 0, ',', '.') : 'Rp .0' ?></td>
+                    <td><?= $pengeluaran3['biaya'] ? 'Rp ' . number_format($pengeluaran3['biaya'], 0, ',', '.')  : 'Rp 0' ?></td>
+                    <td><?= 'Rp ' . number_format($pemasukan3['nominal'] + $pemasukan3['denda'] - $pengeluaran3['biaya'], 0, ',', '.') ?></td>
+                </tr>
+                <tr>
+                    <td style="width: 50px;">4</td>
+                    <td>April</td>
+                    <td><?= $pemasukan4 ? 'Rp ' . number_format($pemasukan4['nominal'] + $pemasukan4['denda'], 0, ',', '.') : 'Rp .0' ?></td>
+                    <td><?= $pengeluaran4['biaya'] ? 'Rp ' . number_format($pengeluaran4['biaya'], 0, ',', '.')  : 'Rp 0' ?></td>
+                    <td><?= 'Rp ' . number_format($pemasukan4['nominal'] + $pemasukan4['denda'] - $pengeluaran4['biaya'], 0, ',', '.') ?></td>
+                </tr>
+                <tr>
+                    <td style="width: 50px;">5</td>
+                    <td>Mei</td>
+                    <td><?= $pemasukan5 ? 'Rp ' . number_format($pemasukan5['nominal'] + $pemasukan5['denda'], 0, ',', '.') : 'Rp .0' ?></td>
+                    <td><?= $pengeluaran5['biaya'] ? 'Rp ' . number_format($pengeluaran5['biaya'], 0, ',', '.')  : 'Rp 0' ?></td>
+                    <td><?= 'Rp ' . number_format($pemasukan5['nominal'] + $pemasukan5['denda'] - $pengeluaran5['biaya'], 0, ',', '.') ?></td>
+                </tr>
+                <tr>
+                    <td style="width: 50px;">6</td>
+                    <td>Juni</td>
+                    <td><?= $pemasukan6 ? 'Rp ' . number_format($pemasukan6['nominal'] + $pemasukan6['denda'], 0, ',', '.') : 'Rp .0' ?></td>
+                    <td><?= $pengeluaran6['biaya'] ? 'Rp ' . number_format($pengeluaran6['biaya'], 0, ',', '.')  : 'Rp 0' ?></td>
+                    <td><?= 'Rp ' . number_format($pemasukan6['nominal'] + $pemasukan6['denda'] - $pengeluaran6['biaya'], 0, ',', '.') ?></td>
+                </tr>
+                <tr>
+                    <td style="width: 50px;">7</td>
+                    <td>Juli</td>
+                    <td><?= $pemasukan7 ? 'Rp ' . number_format($pemasukan7['nominal'] + $pemasukan7['denda'], 0, ',', '.') : 'Rp .0' ?></td>
+                    <td><?= $pengeluaran7['biaya'] ? 'Rp ' . number_format($pengeluaran7['biaya'], 0, ',', '.')  : 'Rp 0' ?></td>
+                    <td><?= 'Rp ' . number_format($pemasukan7['nominal'] + $pemasukan7['denda'] - $pengeluaran7['biaya'], 0, ',', '.') ?></td>
+                </tr>
+                <tr>
+                    <td style="width: 50px;">8</td>
+                    <td>Agustus</td>
+                    <td><?= $pemasukan8 ? 'Rp ' . number_format($pemasukan8['nominal'] + $pemasukan8['denda'], 0, ',', '.') : 'Rp .0' ?></td>
+                    <td><?= $pengeluaran8['biaya'] ? 'Rp ' . number_format($pengeluaran8['biaya'], 0, ',', '.')  : 'Rp 0' ?></td>
+                    <td><?= 'Rp ' . number_format($pemasukan8['nominal'] + $pemasukan8['denda'] - $pengeluaran8['biaya'], 0, ',', '.') ?></td>
+                </tr>
+                <tr>
+                    <td style="width: 50px;">9</td>
+                    <td>September</td>
+                    <td><?= $pemasukan9 ? 'Rp ' . number_format($pemasukan9['nominal'] + $pemasukan9['denda'], 0, ',', '.') : 'Rp .0' ?></td>
+                    <td><?= $pengeluaran9['biaya'] ? 'Rp ' . number_format($pengeluaran9['biaya'], 0, ',', '.')  : 'Rp 0' ?></td>
+                    <td><?= 'Rp ' . number_format($pemasukan9['nominal'] + $pemasukan9['denda'] - $pengeluaran9['biaya'], 0, ',', '.') ?></td>
+                </tr>
+                <tr>
+                    <td style="width: 50px;">10</td>
+                    <td>Oktober</td>
+                    <td><?= $pemasukan10 ? 'Rp ' . number_format($pemasukan10['nominal'] + $pemasukan10['denda'], 0, ',', '.') : 'Rp .0' ?></td>
+                    <td><?= $pengeluaran10['biaya'] ? 'Rp ' . number_format($pengeluaran10['biaya'], 0, ',', '.')  : 'Rp 0' ?></td>
+                    <td><?= 'Rp ' . number_format($pemasukan10['nominal'] + $pemasukan10['denda'] - $pengeluaran10['biaya'], 0, ',', '.') ?></td>
+                </tr>
+                <tr>
+                    <td style="width: 50px;">11</td>
+                    <td>November</td>
+                    <td><?= $pemasukan11 ? 'Rp ' . number_format($pemasukan11['nominal'] + $pemasukan11['denda'], 0, ',', '.') : 'Rp .0' ?></td>
+                    <td><?= $pengeluaran11['biaya'] ? 'Rp ' . number_format($pengeluaran11['biaya'], 0, ',', '.')  : 'Rp 0' ?></td>
+                    <td><?= 'Rp ' . number_format($pemasukan11['nominal'] + $pemasukan11['denda'] - $pengeluaran11['biaya'], 0, ',', '.') ?></td>
+                </tr>
+                <tr>
+                    <td style="width: 50px;">12</td>
+                    <td>Desember</td>
+                    <td><?= $pemasukan12 ? 'Rp ' . number_format($pemasukan12['nominal'] + $pemasukan12['denda'], 0, ',', '.') : 'Rp .0' ?></td>
+                    <td><?= $pengeluaran12['biaya'] ? 'Rp ' . number_format($pengeluaran12['biaya'], 0, ',', '.')  : 'Rp 0' ?></td>
+                    <td><?= 'Rp ' . number_format($pemasukan12['nominal'] + $pemasukan12['denda'] - $pengeluaran12['biaya'], 0, ',', '.') ?></td>
+                </tr>
             </tbody>
             <tfoot>
                 <tr>
-                    <th colspan="2">Total</th>
-                    <td><?= 'Rp ' . number_format($totalPendapatanKos['nominal'] + $totalPendapatanKos['denda'], 0, ',', '.') ?></td>
+                    <th colspan="4">TOTAL PENDAPATAN</th>
+                    <th><?= 'Rp ' . number_format($totalPemasukanTahunan['nominal'] + $totalPemasukanTahunan['denda'] - $totalPengeluaranTahunan['biaya'], 0, ',', '.') ?></th>
                 </tr>
             </tfoot>
         </table>

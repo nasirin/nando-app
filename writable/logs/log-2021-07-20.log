@@ -1,0 +1,121 @@
+CRITICAL - 2021-07-20 08:14:29 --> Trying to access array offset on value of type null
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Auth.php(29): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\Users\\Bon ca...', 29, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->login()
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#6 {main}
+CRITICAL - 2021-07-20 08:14:35 --> Trying to access array offset on value of type null
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Auth.php(29): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\Users\\Bon ca...', 29, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->login()
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#6 {main}
+CRITICAL - 2021-07-20 10:14:51 --> Undefined index: date
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Models\Kebutuhan.php(88): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\Users\\Bon ca...', 88, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Kebutuhan.php(35): App\Models\Kebutuhan->totalKebutuhan(Array)
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Kebutuhan->store()
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kebutuhan))
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#7 {main}
+CRITICAL - 2021-07-20 10:15:33 --> Undefined index: date
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Models\Kebutuhan.php(88): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\Users\\Bon ca...', 88, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Kebutuhan.php(35): App\Models\Kebutuhan->totalKebutuhan(Array)
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Kebutuhan->store()
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kebutuhan))
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#7 {main}
+CRITICAL - 2021-07-20 10:18:42 --> Undefined index: date
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Models\Kebutuhan.php(88): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\Users\\Bon ca...', 88, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Kebutuhan.php(35): App\Models\Kebutuhan->totalKebutuhan(Array)
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Kebutuhan->store()
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kebutuhan))
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#7 {main}
+CRITICAL - 2021-07-20 10:51:10 --> Undefined index: date
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Models\Payment.php(243): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\Users\\Bon ca...', 243, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Invoice.php(60): App\Models\Payment->pendapatanKos(Array)
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Invoice->payment('1')
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Invoice))
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#7 {main}
+CRITICAL - 2021-07-20 10:58:36 --> Undefined index: bulan
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Invoice.php(62): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\Users\\Bon ca...', 62, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Invoice->payment('2')
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Invoice))
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#6 {main}
+CRITICAL - 2021-07-20 11:25:30 --> Call to a member function table() on null
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Invoice.php(55): App\Models\Laporan->test('210720')
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Invoice->payment('2')
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Invoice))
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#6 {main}
+CRITICAL - 2021-07-20 11:25:47 --> Call to a member function table() on null
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Invoice.php(55): App\Models\Laporan->test('210720')
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Invoice->payment('2')
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Invoice))
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#6 {main}
+CRITICAL - 2021-07-20 11:43:04 --> Trying to access array offset on value of type null
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Invoice.php(45): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\Users\\Bon ca...', 45, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Invoice.php(28): App\Controllers\Invoice->cekDueDate('2')
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Invoice->index('2')
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Invoice))
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#7 {main}
+CRITICAL - 2021-07-20 11:54:38 --> Undefined index: tgl_bayar
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Models\Laporan.php(59): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\Users\\Bon ca...', 59, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Invoice.php(67): App\Models\Laporan->simpanKebutuhan(Array)
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Invoice->payment('3')
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Invoice))
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#7 {main}
+CRITICAL - 2021-07-20 11:55:40 --> Argument 1 passed to CodeIgniter\BaseModel::doProtectFields() must be of the type array, string given, called in C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\BaseModel.php on line 842
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\BaseModel.php(842): CodeIgniter\BaseModel->doProtectFields('07')
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Models\Laporan.php(62): CodeIgniter\BaseModel->insertBatch(Array)
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Invoice.php(67): App\Models\Laporan->simpanKebutuhan(Array)
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Invoice->payment('3')
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Invoice))
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#8 {main}
+CRITICAL - 2021-07-20 12:55:01 --> Undefined index: tgl_bayar
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Models\Payment.php(254): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\Users\\Bon ca...', 254, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Laporan.php(67): App\Models\Payment->pendapatanKosTahunan(Array)
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Laporan->keuanganTahunan()
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#7 {main}
+CRITICAL - 2021-07-20 12:56:56 --> Too few arguments to function App\Models\Payment::get(), 0 passed in C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Laporan.php on line 83 and exactly 1 expected
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Laporan.php(83): App\Models\Payment->get()
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Laporan->keuanganTahunan()
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#6 {main}

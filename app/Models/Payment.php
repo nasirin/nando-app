@@ -248,12 +248,12 @@ class Payment extends Model
 
 	public function pendapatanKosTahunan($post)
 	{
-		return $this->db->table($this->table)->selectSum('nominal')->selectSum('denda')->select('tgl_bayar')
-			->join('pelanggans', 'pelanggans.id_pel = payments.id_pel', 'left')
-			->join('kamars', 'kamars.id_kamar = payments.id_kamar', 'left')
-			->where("YEAR(tgl_bayar)", date('Y', strtotime($post['tahun'])))
-			->where('payments.status', 'success')
-			->groupBy('payments.bulan')
+		return $this->db->table($this->table)->selectSum('nominal')->selectSum('denda')->select('bulan,tgl_bayar')
+			// ->join('pelanggans', 'pelanggans.id_pel = payments.id_pel', 'left')
+			// ->join('kamars', 'kamars.id_kamar = payments.id_kamar', 'left')
+			->where("YEAR(tgl_bayar)", date('Y', strtotime($post['tgl_bayar'])))
+			->where('status', 'success')
+			->groupBy('bulan')
 			->get()->getResultArray();
 	}
 
@@ -262,6 +262,15 @@ class Payment extends Model
 		return $this->db->table($this->table)->selectSum('nominal')->selectSum('denda')
 			->where("YEAR(tgl_bayar)", date('Y', strtotime($post['tahun'])))
 			->where('payments.status', 'success')
+			->get()->getRowArray();
+	}
+
+	public function laporanTahunan($bulan, $post)
+	{
+		return $this->db->table($this->table)->selectSum('nominal')->selectSum('denda')
+			->where('status', 'success')
+			->where('bulan', $bulan)
+			->where('YEAR(tgl_bayar)', $post['tahun'])
 			->get()->getRowArray();
 	}
 }

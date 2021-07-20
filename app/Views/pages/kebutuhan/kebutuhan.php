@@ -37,7 +37,7 @@
                                         <td><?= $no++ ?></td>
                                         <td><?= $data['kebutuhan'] ?></td>
                                         <td><?= 'Rp ' . number_format($data['biaya'], 0, ',', '.') ?></td>
-                                        <td><?= $data['tanggal'] ?></td>
+                                        <td><?= date('d F Y', strtotime($data['tanggal'])) ?></td>
                                         <td><?= $data['note'] ?></td>
                                         <td>
                                             <a href="#kebutuhan<?= $data['id_kebutuhan'] ?>" data-toggle="modal" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>

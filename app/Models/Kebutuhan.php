@@ -14,7 +14,7 @@ class Kebutuhan extends Model
 	protected $returnType           = 'array';
 	protected $useSoftDeletes       = false;
 	protected $protectFields        = true;
-	protected $allowedFields        = ['kebutuhan', 'tanggal', 'biaya', 'note'];
+	protected $allowedFields        = ['kebutuhan', 'tanggal', 'biaya', 'note', 'bulan_kebutuhan'];
 
 	// Dates
 	protected $useTimestamps        = false;
@@ -46,7 +46,8 @@ class Kebutuhan extends Model
 			'kebutuhan' => $post['keterangan'],
 			'tanggal' => $post['tanggal'],
 			'biaya' => $post['biaya'],
-			'note' => $post['note']
+			'note' => $post['note'],
+			'bulan_kebutuhan' => date('m', strtotime($post['tanggal']))
 		];
 
 		$this->insert($data);
@@ -58,7 +59,8 @@ class Kebutuhan extends Model
 			'kebutuhan' => $post['keterangan'],
 			'tanggal' => $post['tanggal'],
 			'biaya' => $post['biaya'],
-			'note' => $post['note']
+			'note' => $post['note'],
+			'bulan_kebutuhan' => date('m', strtotime($post['tanggal']))
 		];
 
 		$this->update($id, $data);
@@ -72,12 +74,13 @@ class Kebutuhan extends Model
 			->get()->getResultArray();
 	}
 
-	public function laporanTahunan($post)
-	{
-		return $this->db->table($this->table)
-			->where('YEAR(tanggal)', date('Y', strtotime($post['tahun'])))
-			->get()->getResultArray();
-	}
+	// public function laporanTahunan($post)
+	// {
+	// 	return $this->db->table($this->table)->selectSum('biaya')->select('bulan_kebutuhan,tanggal')
+	// 		->where('MONTH(tanggal)', date('m', strtotime($post['tanggal'])))
+	// 		->where('YEAR(tanggal)', date('Y', strtotime($post['tanggal'])))
+	// 		->get()->getRowArray();
+	// }
 
 	public function totalKebutuhan($post)
 	{
@@ -91,6 +94,15 @@ class Kebutuhan extends Model
 	{
 		return $this->db->table($this->table)->selectSum('biaya')
 			->where('YEAR(tanggal)', date('Y', strtotime($post['tahun'])))
+			// ->groupBy('bulan_kebutuhan')
+			->get()->getRowArray();
+	}
+
+	public function laporanTahunan($bulan, $post)
+	{
+		return $this->db->table($this->table)->selectSum('biaya')
+			->where('bulan_kebutuhan', $bulan)
+			->where('YEAR(tanggal)', $post['tahun'])
 			->get()->getRowArray();
 	}
 }

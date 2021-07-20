@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\Booking;
 use App\Models\Kebutuhan;
+use App\Models\Laporan as ModelsLaporan;
 use App\Models\Payment;
 use TCPDF;
 
@@ -13,12 +14,14 @@ class Laporan extends BaseController
 	protected $payment;
 	protected $booking;
 	protected $kebutuhan;
+	protected $laporan;
 
 	public function __construct()
 	{
 		$this->payment = new Payment();
 		$this->booking = new Booking();
 		$this->kebutuhan = new Kebutuhan();
+		$this->laporan = new ModelsLaporan();
 	}
 
 	public function booking()
@@ -61,16 +64,43 @@ class Laporan extends BaseController
 	public function keuanganTahunan()
 	{
 		$post = $this->request->getVar();
-		
+
 		$data = [
 			'no' => 1,
 			'tahun' => $post['tahun'],
-			'pendapatanKos' => $this->payment->pendapatanKosTahunan($post),
-			'totalPendapatanKos' => $this->payment->totalPendapatanTahunan($post),
-			'pengeluaran' => $this->kebutuhan->laporanTahunan($post),
-			'totalPengeluaranKos' => $this->kebutuhan->laporanTotalKebutuhan($post),
+			'laporan' => $this->laporan->where('print', $post['tahun'])->findAll(),
+			'pemasukan1' => $this->payment->laporanTahunan('01', $post),
+			'pemasukan2' => $this->payment->laporanTahunan('02', $post),
+			'pemasukan3' => $this->payment->laporanTahunan('03', $post),
+			'pemasukan4' => $this->payment->laporanTahunan('04', $post),
+			'pemasukan5' => $this->payment->laporanTahunan('05', $post),
+			'pemasukan6' => $this->payment->laporanTahunan('06', $post),
+			'pemasukan7' => $this->payment->laporanTahunan('07', $post),
+			'pemasukan8' => $this->payment->laporanTahunan('08', $post),
+			'pemasukan9' => $this->payment->laporanTahunan('09', $post),
+			'pemasukan10' => $this->payment->laporanTahunan('10', $post),
+			'pemasukan11' => $this->payment->laporanTahunan('11', $post),
+			'pemasukan12' => $this->payment->laporanTahunan('12', $post),
+			'pengeluaran1' => $this->kebutuhan->laporanTahunan('01', $post),
+			'pengeluaran2' => $this->kebutuhan->laporanTahunan('02', $post),
+			'pengeluaran3' => $this->kebutuhan->laporanTahunan('03', $post),
+			'pengeluaran4' => $this->kebutuhan->laporanTahunan('04', $post),
+			'pengeluaran5' => $this->kebutuhan->laporanTahunan('05', $post),
+			'pengeluaran6' => $this->kebutuhan->laporanTahunan('06', $post),
+			'pengeluaran7' => $this->kebutuhan->laporanTahunan('07', $post),
+			'pengeluaran8' => $this->kebutuhan->laporanTahunan('08', $post),
+			'pengeluaran9' => $this->kebutuhan->laporanTahunan('09', $post),
+			'pengeluaran10' => $this->kebutuhan->laporanTahunan('10', $post),
+			'pengeluaran11' => $this->kebutuhan->laporanTahunan('11', $post),
+			'pengeluaran12' => $this->kebutuhan->laporanTahunan('12', $post),
+
+			'totalPemasukanTahunan' => $this->payment->totalPendapatanTahunan($post),
+			'totalPengeluaranTahunan' => $this->kebutuhan->laporanTotalKebutuhan($post),
 		];
-		
+
+		// dd($data);
+
+		// return view('pages/laporan/keuangan_tahunan', $data);
 		$html = view('pages/laporan/keuangan_tahunan', $data);
 
 		$pdf = new TCPDF('L', PDF_UNIT, 'A4', true, 'UTF-8', false);
