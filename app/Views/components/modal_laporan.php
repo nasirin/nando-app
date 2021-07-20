@@ -9,7 +9,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="/invoice/booking" method="post" target="_blank">
+                <form action="/invoice/booking" method="post">
                     <?= csrf_field() ?>
                     <div class="form-group">
                         <label>Status</label>
@@ -25,7 +25,7 @@
                         <input type="date" name="tglBayar" required class="form-control">
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Print</button>
+                        <button type="submit" id="btnBooking" class="btn btn-primary">Print</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </form>
@@ -45,7 +45,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="/invoice/keuangan/bulanan" method="post" target="_blank">
+                <form action="/invoice/keuangan/bulanan" method="post">
                     <?= csrf_field() ?>
                     <div class="form-group">
                         <label>Input Date</label>
@@ -71,7 +71,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="/invoice/keuangan/tahunan" method="post" target="_blank">
+                <form action="/invoice/keuangan/tahunan" method="post">
                     <?= csrf_field() ?>
                     <div class="form-group">
                         <label>Input Date</label>

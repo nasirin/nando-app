@@ -73,4 +73,8 @@
     for (i = endYear; i > startYear; i--) {
         $('#yearpicker').append($('<option />').val(i).html(i));
     }
+
+    // $('#btnBooking').click(function(){
+    //     location.reload();
+    // })
 </script>

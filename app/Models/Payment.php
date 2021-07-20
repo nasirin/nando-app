@@ -205,12 +205,14 @@ class Payment extends Model
 	{
 		return $this->db->table($this->table)->selectSum('nominal')
 			->where('status', $post['status'])
+			->where('tgl_bayar', $post['tglBayar'])
 			->get()->getRowArray();
 	}
 	public function totalDenda($post)
 	{
 		return $this->db->table($this->table)->selectSum('denda')
 			->where('status', $post['status'])
+			->where('tgl_bayar', $post['tglBayar'])
 			->get()->getRowArray();
 	}
 
