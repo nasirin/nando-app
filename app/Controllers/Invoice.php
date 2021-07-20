@@ -58,11 +58,11 @@ class Invoice extends BaseController
 		$last2 = $this->payment->getLastById($id);
 		$this->booking->dueDateUpdate($last2);
 
-		$totalPayment = $this->payment->pendapatanKosTahunan($last);
+		// $totalPayment = $this->payment->pendapatanKosTahunan($last);
 
 		// $getLaporan = $this->laporan->where('bulan', $last['bulan'])->where('print', date('Y', strtotime($totalPayment['tgl_bayar'])))->get()->getRowArray();
 		// dd($totalPayment);
-		$this->laporan->simpanKebutuhan($totalPayment);
+		// $this->laporan->simpanKebutuhan($totalPayment);
 
 		session()->setFlashdata('success', 'Payment success');
 		return redirect()->to('/invoice/' . $last['id_booking']);
