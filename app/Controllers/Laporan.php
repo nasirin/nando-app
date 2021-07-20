@@ -65,7 +65,6 @@ class Laporan extends BaseController
 		$data = [
 			'no' => 1,
 			'tahun' => $post['tahun'],
-			'laporan' => $this->laporan->where('print', $post['tahun'])->findAll(),
 			'pemasukan1' => $this->payment->laporanTahunan('01', $post),
 			'pemasukan2' => $this->payment->laporanTahunan('02', $post),
 			'pemasukan3' => $this->payment->laporanTahunan('03', $post),
