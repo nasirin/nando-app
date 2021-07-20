@@ -14,14 +14,12 @@ class Laporan extends BaseController
 	protected $payment;
 	protected $booking;
 	protected $kebutuhan;
-	protected $laporan;
 
 	public function __construct()
 	{
 		$this->payment = new Payment();
 		$this->booking = new Booking();
 		$this->kebutuhan = new Kebutuhan();
-		$this->laporan = new ModelsLaporan();
 	}
 
 	public function booking()

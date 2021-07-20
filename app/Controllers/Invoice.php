@@ -14,13 +14,11 @@ class Invoice extends BaseController
 	protected $booking;
 	protected $payment;
 	protected $kebutuhan;
-	protected $laporan;
 
 	public function __construct()
 	{
 		$this->booking = new Booking();
 		$this->payment = new Payment();
-		$this->laporan = new Laporan();
 		$this->kebutuhan = new Kebutuhan();
 	}
 	public function index($id)

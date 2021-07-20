@@ -4,17 +4,14 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\Kebutuhan as ModelsKebutuhan;
-use App\Models\Laporan;
 
 class Kebutuhan extends BaseController
 {
 	protected $kebutuhan;
-	protected $laporan;
 
 	public function __construct()
 	{
 		$this->kebutuhan = new ModelsKebutuhan();
-		$this->laporan = new Laporan();
 	}
 
 	public function index()
@@ -32,9 +29,9 @@ class Kebutuhan extends BaseController
 		// dd($post);
 		$this->kebutuhan->store($post);
 
-		$totalKebutuhan = $this->kebutuhan->laporanTahunan($post);
-		$getLaporan = $this->laporan->where('bulan', $totalKebutuhan['bulan_kebutuhan'])->where('print', date('Y', strtotime($totalKebutuhan['tanggal'])))->get()->getRowArray();
-		$this->laporan->simpanKebutuhan($totalKebutuhan, $getLaporan);
+		// $totalKebutuhan = $this->kebutuhan->laporanTahunan($post);
+		// $getLaporan = $this->laporan->where('bulan', $totalKebutuhan['bulan_kebutuhan'])->where('print', date('Y', strtotime($totalKebutuhan['tanggal'])))->get()->getRowArray();
+		// $this->laporan->simpanKebutuhan($totalKebutuhan, $getLaporan);
 
 		if ($this->kebutuhan->affectedRows()) {
 			session()->setFlashdata('success', 'Data has been created');
@@ -51,10 +48,10 @@ class Kebutuhan extends BaseController
 
 		$this->kebutuhan->ubah($post, $id);
 
-		$totalKebutuhan = $this->kebutuhan->laporanTahunan($post);
+		// $totalKebutuhan = $this->kebutuhan->laporanTahunan($post);
 
-		$getLaporan = $this->laporan->where('bulan', $totalKebutuhan['bulan_kebutuhan'])->where('print', date('Y', strtotime($totalKebutuhan['tanggal'])))->get()->getRowArray();
-		$this->laporan->simpanKebutuhan($totalKebutuhan, $getLaporan);
+		// $getLaporan = $this->laporan->where('bulan', $totalKebutuhan['bulan_kebutuhan'])->where('print', date('Y', strtotime($totalKebutuhan['tanggal'])))->get()->getRowArray();
+		// $this->laporan->simpanKebutuhan($totalKebutuhan, $getLaporan);
 
 		if ($this->kebutuhan->affectedRows()) {
 			session()->setFlashdata('success', 'Data has been Updated');
