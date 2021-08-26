@@ -56,7 +56,7 @@ class Kamar extends Model
 		$data = [
 			'nama_kamar' => $post['nama'],
 			'luas' => $post['luas'],
-			'status' => 'available',
+			// 'status' => 'available',
 		];
 
 		$this->update($id, $data);
