@@ -1,0 +1,32 @@
+CRITICAL - 2021-08-26 15:42:16 --> Trying to access array offset on value of type null
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Auth.php(29): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\Users\\Bon ca...', 29, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->login()
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#6 {main}
+CRITICAL - 2021-08-26 22:13:17 --> Trying to access array offset on value of type null
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Auth.php(29): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\Users\\Bon ca...', 29, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(874): App\Controllers\Auth->login()
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(417): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(327): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#6 {main}
+CRITICAL - 2021-08-26 22:14:03 --> Trying to access array offset on value of type null
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Auth.php(29): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\Users\\Bon ca...', 29, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(874): App\Controllers\Auth->login()
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(417): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(327): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#6 {main}
+CRITICAL - 2021-08-26 22:15:08 --> Undefined property: App\Controllers\Kamar::$kanar
+#0 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\app\Controllers\Kamar.php(64): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\Users\\Bon ca...', 64, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(874): App\Controllers\Kamar->update('3')
+#2 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(417): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kamar))
+#3 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\CodeIgniter.php(327): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Bon cabe\Documents\pesanan\nando\nando-app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#6 {main}

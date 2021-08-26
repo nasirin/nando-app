@@ -61,7 +61,7 @@ class Kamar extends BaseController
 		$post = $this->request->getVar();
 		$this->kamar->ubah($post, $id);
 		$this->detailKamar->ubah($post, $id);
-		if ($this->kanar->affectedRows()) {
+		if ($this->kamar->affectedRows()) {
 			session()->setFlashdata('success', 'Data has been updated');
 		} else {
 			session()->setFlashdata('error', 'Please Try again');
