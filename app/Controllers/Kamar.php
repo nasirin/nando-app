@@ -61,22 +61,14 @@ class Kamar extends BaseController
 		$post = $this->request->getVar();
 		$this->kamar->ubah($post, $id);
 		$this->detailKamar->ubah($post, $id);
-		if ($this->kamar->affectedRows()) {
-			session()->setFlashdata('success', 'Data has been updated');
-		} else {
-			session()->setFlashdata('error', 'Please Try again');
-		}
+		session()->setFlashdata('success', 'Data has been updated');
 		return redirect()->to('/kamar');
 	}
 
 	public function destroy($id)
 	{
 		$this->kamar->delete($id);
-		if ($this->kamar->affectedRows()) {
-			session()->setFlashdata('success', 'Data has been deleted');
-		} else {
-			session()->setFlashdata('error', 'Please Try again');
-		}
+		session()->setFlashdata('success', 'Data has been deleted');
 		return redirect()->to('/kamar');
 	}
 
