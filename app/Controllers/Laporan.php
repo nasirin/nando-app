@@ -33,6 +33,10 @@ class Laporan extends BaseController
 			'totalNominal' => $this->payment->totalNominal($post),
 			'totalDenda' => $this->payment->totalDenda($post)
 		];
+		if (!$data['booking']) {
+			session()->setFlashdata('error', "Data tidak tersedia");
+			return redirect()->to('/');
+		}
 
 		// return view('pages/laporan/booking', $data);
 
