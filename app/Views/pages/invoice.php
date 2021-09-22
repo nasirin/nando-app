@@ -15,7 +15,7 @@
                             <div class="row">
                                 <div class="col-xs-12 invoice-header">
                                     <h1>
-                                        <i class="fa fa-globe"></i> Invoice.
+                                        <i style="background-image: url(/assets/logo.png); width: 30px;"></i> Dpavillon.
                                         <small class="pull-right">Date: <?= date('d/m/Y') ?></small>
                                     </h1>
                                 </div>
