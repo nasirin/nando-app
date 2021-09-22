@@ -28,10 +28,10 @@
                                 <div class="col-sm-6 invoice-col">
                                     From
                                     <address>
-                                        <strong>Nando Kos</strong>
-                                        <br>Alamat Nando Kos
+                                        <strong>Dpavillon</strong>
+                                        <br>Alamat Dpavillon
                                         <br>Phone: +62 821-3772-6260
-                                        <br>Email: nando@gmail.com
+                                        <br>Email: Dpavillon@gmail.com
                                     </address>
                                 </div>
                                 <!-- /.col -->
