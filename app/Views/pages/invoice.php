@@ -29,9 +29,9 @@
                                     From
                                     <address>
                                         <strong>Dpavillon</strong>
-                                        <br>Alamat Dpavillon
-                                        <br>Phone: +62 821-3772-6260
-                                        <br>Email: Dpavillon@gmail.com
+                                        <br>Alamat jl. Medoho permai
+                                        <br>Phone: +62 813-2824-5732
+                                        <br>Email: dpavillon@gmail.com
                                     </address>
                                 </div>
                                 <!-- /.col -->
